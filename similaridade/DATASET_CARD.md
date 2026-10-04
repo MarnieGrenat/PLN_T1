@@ -56,7 +56,7 @@ A ordem das palavras dentro do par não tem significado (a similaridade é trata
 3. **200 palavras mais representativas**: os lemas mais frequentes do corpus (de `rede`, 188
    ocorrências em 126 questões, até `tarefa`, 11 ocorrências em 9 questões); empate resolvido pelo número
    de questões em que o lema aparece.
-4. **100 pares**: os 200 lemas foram embaralhados (semente 42) e emparelhadas em sequência. Os pares são
+4. **100 pares**: os 200 lemas foram embaralhados (semente 42) e emparelhados em sequência. Os pares são
    disjuntos: cada palavra aparece em exatamente um par.
 5. **Anotação**: dois alunos anotaram os 100 pares de forma independente, cada um no seu arquivo, sem ver
    as respostas do outro.
