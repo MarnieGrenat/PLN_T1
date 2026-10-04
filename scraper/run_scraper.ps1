@@ -15,12 +15,19 @@
     script continues by itself. Exams already downloaded are skipped, so the
     script can be re-run safely after an interruption.
 
+    If the check keeps failing in that window, use -Manual: each exam opens in
+    your normal default browser, you download the files yourself, and the
+    script moves the new PDFs from your Downloads folder (or -Downloads <path>)
+    into dados\pdfs\<slug>\.
+
 .EXAMPLE
     .\run_scraper.ps1
 .EXAMPLE
     .\run_scraper.ps1 -Limite 5 -SkipInstall
 .EXAMPLE
-    .\run_scraper.ps1 -SkipListar -SkipBaixar    # only re-extract from existing PDFs
+    .\run_scraper.ps1 -Manual -SkipInstall -SkipListar
+.EXAMPLE
+    .\run_scraper.ps1 -SkipListar -SkipBaixar   # only re-extract from existing PDFs
 #>
 [CmdletBinding()]
 param(
@@ -29,6 +36,8 @@ param(
     [int]$Espera = 180,
     [switch]$ManterSobrepostas,
     [switch]$ManterSemSecao,
+    [switch]$Manual,
+    [string]$Downloads,
     [switch]$SkipInstall,
     [switch]$SkipListar,
     [switch]$SkipBaixar,
@@ -81,7 +90,13 @@ try {
         Invoke-Step 'listar (exam listings -> dados\provas.csv)' $venvPython @('scraper_pci.py', 'listar', '--ano-min', "$AnoMin")
     }
     if (-not $SkipBaixar) {
-        Invoke-Step 'baixar (download exams + answer keys; browser window opens)' $venvPython (@('scraper_pci.py', 'baixar') + $common + @('--espera', "$Espera"))
+        if ($Manual) {
+            $manualArgs = @('scraper_pci.py', 'manual') + $common
+            if ($Downloads) { $manualArgs += @('--downloads', $Downloads) }
+            Invoke-Step 'manual (download each exam in your own browser)' $venvPython $manualArgs
+        } else {
+            Invoke-Step 'baixar (download exams + answer keys; browser window opens)' $venvPython (@('scraper_pci.py', 'baixar') + $common + @('--espera', "$Espera"))
+        }
     }
     if (-not $SkipExtrair) {
         $extrairArgs = @('scraper_pci.py', 'extrair') + $common

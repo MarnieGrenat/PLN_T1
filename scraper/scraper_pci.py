@@ -9,6 +9,7 @@ Saída principal: dados/questoes.csv com as colunas
 Etapas (rode em ordem):
     python scraper_pci.py listar    # lê as listagens das 3 subáreas -> dados/provas.csv
     python scraper_pci.py baixar    # baixa prova + gabarito (abre um navegador)
+    python scraper_pci.py manual    # alternativa ao "baixar": você baixa no seu navegador
     python scraper_pci.py extrair   # lê os PDFs e gera dados/questoes.csv
 
 Dependências:
@@ -79,6 +80,19 @@ def carregar_provas():
         p["subareas"] = [s for s in p["subareas"].split(";") if s]
         p["ano"] = int(p["ano"]) if p["ano"] else None
     return provas
+
+
+def faltando(prova):
+    """O que ainda falta baixar da prova: lista com "prova" e/ou "gabarito"."""
+    pasta = DIR_PDFS / prova["slug"]
+    pdfs = list(pasta.glob("*.pdf")) if pasta.exists() else []
+    gabs = [p for p in pdfs if "gabarito" in sem_acento(p.name.lower())]
+    falta = []
+    if len(gabs) == len(pdfs):
+        falta.append("prova")
+    if not gabs:
+        falta.append("gabarito")
+    return falta
 
 
 def selecionar_provas(args):
@@ -175,13 +189,10 @@ def baixar(args):
     from playwright.sync_api import sync_playwright
 
     provas = selecionar_provas(args)
-    pendentes = []
-    for p in provas:
-        pasta = DIR_PDFS / p["slug"]
-        if not (pasta.exists() and any(pasta.glob("*.pdf"))):
-            pendentes.append(p)
+    pendentes = [p for p in provas if faltando(p)]
+    so_gab = sum(faltando(p) == ["gabarito"] for p in pendentes)
     print(f"{len(provas)} provas selecionadas, {len(provas) - len(pendentes)} já baixadas, "
-          f"{len(pendentes)} a baixar.\n")
+          f"{len(pendentes)} a baixar ({so_gab} só sem gabarito).\n")
     print("Uma janela do navegador vai abrir. Em cada prova, clique na verificação "
           "'Confirme que é humano' se ela aparecer; o script segue sozinho.\n"
           "Ctrl+C interrompe (o que já foi baixado fica salvo).\n")
@@ -240,6 +251,62 @@ def baixar(args):
                 time.sleep(PAUSA)
 
         browser.close()
+    print(f"\nPDFs em {DIR_PDFS}/. Próximo passo: python scraper_pci.py extrair")
+
+
+# ================================================================ 2b. MANUAL
+# Alternativa ao "baixar" quando a verificação falha no navegador controlado
+# pelo Playwright: abre cada prova no seu navegador padrão, você faz a
+# verificação e baixa os arquivos normalmente, e o script move os PDFs novos
+# da pasta de downloads para dados/pdfs/<slug>/.
+def manual(args):
+    import shutil
+    import webbrowser
+
+    downloads = Path(args.downloads).expanduser()
+    if not downloads.is_dir():
+        sys.exit(f"Pasta de downloads não encontrada: {downloads} (use --downloads)")
+
+    provas = selecionar_provas(args)
+    pendentes = [p for p in provas if faltando(p)]
+    so_gab = sum(faltando(p) == ["gabarito"] for p in pendentes)
+    print(f"{len(provas)} provas selecionadas, {len(provas) - len(pendentes)} já baixadas, "
+          f"{len(pendentes)} a baixar ({so_gab} só sem gabarito).")
+    print(f"Os PDFs serão buscados em {downloads}\n"
+          "Para cada prova: faça a verificação, clique em 'Baixar' na prova e no gabarito,\n"
+          "espere os downloads terminarem e aperte Enter aqui.\n")
+
+    for i, prova in enumerate(pendentes, 1):
+        print(f"[{i}/{len(pendentes)}] {prova['titulo']} ({prova['ano']}, {prova['banca']})")
+        print(f"   falta baixar: {' e '.join(faltando(prova))}")
+        antes = {p: p.stat().st_mtime for p in downloads.glob("*.pdf")}
+        webbrowser.open(prova["url"])
+        try:
+            r = input("   Enter = terminei | p = pular | q = sair: ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
+        if r == "q":
+            break
+        if r == "p":
+            continue
+
+        if any(downloads.glob("*.crdownload")) or any(downloads.glob("*.part")):
+            print("   aviso: há downloads em andamento; eles serão ignorados")
+        novos = [p for p in downloads.glob("*.pdf") if antes.get(p) != p.stat().st_mtime]
+        if not novos:
+            print("   nenhum PDF novo encontrado")
+            continue
+        destino = DIR_PDFS / prova["slug"]
+        destino.mkdir(parents=True, exist_ok=True)
+        for p in novos:
+            alvo = destino / nome_seguro(p.name)
+            shutil.move(str(p), alvo)
+            print(f"   ok  {alvo.name}")
+        if faltando(prova):
+            print(f"   aviso: ainda falta {' e '.join(faltando(prova))} (o gabarito precisa ter "
+                  "'gabarito' no nome); rode de novo para completar")
+
     print(f"\nPDFs em {DIR_PDFS}/. Próximo passo: python scraper_pci.py extrair")
 
 
@@ -632,7 +699,7 @@ def extrair(args):
 # ================================================================ CLI
 def main():
     ap = argparse.ArgumentParser(description="Coleta de questões do PCI Concursos")
-    ap.add_argument("etapa", choices=["listar", "baixar", "extrair"])
+    ap.add_argument("etapa", choices=["listar", "baixar", "manual", "extrair"])
     ap.add_argument("--ano-min", type=int, default=ANO_MIN_PADRAO, help="ano mínimo das provas (padrão 2020)")
     ap.add_argument("--manter-sobrepostas", action="store_true",
                     help="inclui provas listadas em mais de uma subárea (usa a primeira por prioridade)")
@@ -641,8 +708,10 @@ def main():
     ap.add_argument("--limite", type=int, default=0, help="processa só as N primeiras provas (para testar)")
     ap.add_argument("--espera", type=int, default=180,
                     help="segundos esperando a verificação de cada prova antes de pular (padrão 180)")
+    ap.add_argument("--downloads", default=str(Path.home() / "Downloads"),
+                    help="pasta onde o seu navegador salva os downloads (etapa manual)")
     args = ap.parse_args()
-    {"listar": listar, "baixar": baixar, "extrair": extrair}[args.etapa](args)
+    {"listar": listar, "baixar": baixar, "manual": manual, "extrair": extrair}[args.etapa](args)
 
 
 if __name__ == "__main__":
