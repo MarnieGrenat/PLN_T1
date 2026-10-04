@@ -54,7 +54,8 @@ grava um arquivo de anotação por anotador. A escala Likert (1 a 5) e as instru
 Os dois alunos anotaram os 100 pares (`pares_anotador1.csv` e `pares_anotador2.csv`).
 `similaridade/avaliar_concordancia.py` une as duas anotações, mede a concordância
 ([`CONCORDANCIA.md`](similaridade/CONCORDANCIA.md)) e gera o CSV final `similaridade_final.csv`, com a
-nota de cada anotador e a média das duas.
+nota de cada anotador e a média das duas. Esquema, estatísticas e limitações do CSV:
+[`similaridade/DATASET_CARD.md`](similaridade/DATASET_CARD.md).
 
 ## Como executar
 

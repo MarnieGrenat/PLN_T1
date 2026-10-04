@@ -5,7 +5,7 @@ Corpus de similaridade de palavras (Trabalho 1, item 2).
 
 1. lê enunciados + alternativas de dataset/questoes.jsonl
 2. spaCy (pt_core_news_lg): tokeniza, lematiza e remove stopwords
-3. escolhe as 200 lemas mais representativas
+3. escolhe os 200 lemas mais representativos
 4. sorteia 100 pares disjuntos (cada palavra aparece em exatamente um par)
 5. grava os arquivos de anotação (um por anotador, mesma ordem de pares)
 
