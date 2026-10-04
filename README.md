@@ -16,7 +16,7 @@ palavras derivado dele.
 ## Pipeline
 
 ```
-PDFs (PCI Concursos) ──pdftotext -layout──▶ dataset/raw/*.txt
+PDFs (PCI Concursos) ──pdftotext -layout──▶ dataset/raw.zip (*.txt)
         │
         ▼  scraper/processar_dataset.py
 dataset/questoes.jsonl, dataset/<subarea>/<ano>.jsonl, dataset/descartes.csv
@@ -31,7 +31,7 @@ similaridade/palavras_top200.csv, similaridade/pares_anotador{1,2}.csv
 
 1. `scraper/scraper_pci.py` baixa provas e gabaritos (PDF) das listagens de cada subárea. Os PDFs
    ficam versionados em partes: `scraper/dados/pdfs.zip.000` a `.003`.
-2. O texto foi extraído com `pdftotext -layout` para `dataset/raw/`.
+2. O texto foi extraído com `pdftotext -layout` e compactado em `dataset/raw.zip`.
 3. `scraper/processar_dataset.py` transforma o texto bruto em questões estruturadas:
    separa as colunas de cada página, remove cabeçalhos e marcas d'água, recorta a seção de
    conhecimentos específicos, separa enunciado e alternativas e junta o gabarito. Questões com
@@ -65,7 +65,7 @@ python3 -m spacy download pt_core_news_lg
 Os comandos abaixo rodam a partir da raiz do repositório:
 
 ```bash
-# reconstrói as questões a partir de dataset/raw/
+# reconstrói as questões a partir de dataset/raw.zip
 python3 scraper/processar_dataset.py
 
 # estatísticas do corpus
@@ -85,10 +85,11 @@ têm o mesmo nome (`gabarito.pdf`):
 
 ```bash
 cat scraper/dados/pdfs.zip.00? > /tmp/pdfs.zip && unzip -q /tmp/pdfs.zip -d /tmp/pdfs
-mkdir -p dataset/raw
+mkdir -p /tmp/raw
 find /tmp/pdfs -iname '*.pdf' | while read -r f; do
-  pdftotext -layout "$f" "dataset/raw/$(basename "$(dirname "$f")")__$(basename "${f%.*}").txt"
+  pdftotext -layout "$f" "/tmp/raw/$(basename "$(dirname "$f")")__$(basename "${f%.*}").txt"
 done
+(cd /tmp/raw && zip -q "$OLDPWD/dataset/raw.zip" *.txt)
 ```
 
 Um dos PDFs tem nome longo demais para o sistema de arquivos e foi gravado com nome abreviado
