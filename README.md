@@ -25,6 +25,9 @@ dataset/questoes.jsonl, dataset/<subarea>/<ano>.jsonl, dataset/descartes.csv
         │
         ▼  similaridade/construir_pares.py  (spaCy pt_core_news_lg)
 similaridade/palavras_top200.csv, similaridade/pares_anotador{1,2}.csv
+        │
+        ▼  (anotação manual, escala Likert 1–5) + similaridade/avaliar_concordancia.py
+similaridade/similaridade_final.csv, similaridade/CONCORDANCIA.md
 ```
 
 ### 1. Corpus de questões (item 1)
@@ -48,9 +51,10 @@ lemas mais frequentes (substantivos, verbos e adjetivos), sorteia 100 pares disj
 grava um arquivo de anotação por anotador. A escala Likert (1 a 5) e as instruções estão em
 [`similaridade/README.md`](similaridade/README.md).
 
-Estado: os arquivos `pares_anotador1.csv` e `pares_anotador2.csv` estão **sem anotação** (coluna
-`similaridade` vazia). Faltam anotar os pares, medir a concordância entre os anotadores e gerar o CSV
-final.
+Os dois alunos anotaram os 100 pares (`pares_anotador1.csv` e `pares_anotador2.csv`).
+`similaridade/avaliar_concordancia.py` une as duas anotações, mede a concordância
+([`CONCORDANCIA.md`](similaridade/CONCORDANCIA.md)) e gera o CSV final `similaridade_final.csv`, com a
+nota de cada anotador e a média das duas.
 
 ## Como executar
 
@@ -73,9 +77,12 @@ python3 scraper/estatisticas_dataset.py
 
 # palavras e pares para anotação de similaridade
 python3 similaridade/construir_pares.py
+
+# une as anotações, calcula a concordância e gera o CSV final
+python3 similaridade/avaliar_concordancia.py
 ```
 
-Os três scripts são determinísticos: rodar de novo reproduz os mesmos arquivos. Atenção: rodar
+Os scripts são determinísticos: rodar de novo reproduz os mesmos arquivos. Atenção: rodar
 `construir_pares.py` **sobrescreve** os arquivos de anotação; não rode depois que começarem a
 anotar.
 
