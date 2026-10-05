@@ -10,9 +10,8 @@ palavras derivado dele.
 |---|---|
 | `scraper/` | coleta (web scraping) das provas e gabaritos e processamento em questões estruturadas |
 | `dataset/` | corpus de questões: texto bruto, questões por subárea/ano, estatísticas e *dataset card* |
-| `similaridade/` | corpus de similaridade de palavras: 200 palavras, 100 pares, anotações e CSV final |
+| `similaridade/` | corpus de similaridade de palavras (200 palavras, 100 pares, anotações, CSV final) e teste com spaCy, BERT e LLM |
 | `classificacao/` | classificação das questões por subárea (item 3), comparando BoW/TF-IDF, spaCy e BERT |
-| `src/` | treino e inferência dos modelos |
 
 ## Pipeline
 

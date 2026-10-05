@@ -220,3 +220,6 @@ __marimo__/
 .streamlit/secrets.toml
 scraper/dados/pdfs.zip
 scraper/dados/pdfs/
+
+# embeddings de BERT (gerados no Colab/localmente; pesados)
+classificacao/cache/

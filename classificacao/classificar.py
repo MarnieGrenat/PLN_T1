@@ -13,8 +13,6 @@
 #   uv run python classificacao/classificar.py
 
 import os
-import re
-import unicodedata
 
 import numpy as np
 import pandas as pd
@@ -29,59 +27,23 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
 
-ARQUIVO_QUESTOES = "dataset/questoes.jsonl"
+from preparar_dados import carregar_questoes
+from embeddings_bert import gerar_embeddings_bert, MODELOS_BERT
+
 PASTA_RESULTADOS = "classificacao/resultados"
-PASTA_CACHE = "classificacao/cache"  # embeddings do BERT ficam salvos aqui (demora para gerar)
 CLASSES = ["redes", "seguranca", "sistemas"]
 SEMENTE = 42
-MODELOS_BERT = ["neuralmind/bert-base-portuguese-cased", "bert-base-uncased"]
 
 os.makedirs(PASTA_RESULTADOS, exist_ok=True)
-os.makedirs(PASTA_CACHE, exist_ok=True)
 
 # validação cruzada com 5 partes, mantendo a proporção das classes em cada parte
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=SEMENTE)
 
 
 # ============================================================
-# 1. Carregar as questões
+# 1. Carregar as questões (preparar_dados.py: mesmo texto e mesma ordem usados no Colab)
 # ============================================================
-
-def montar_texto(questao):
-    # texto = enunciado + alternativas (as alternativas têm muitos termos técnicos)
-    alternativas = questao["alternativas"]
-    if isinstance(alternativas, dict):
-        return questao["enunciado"] + " " + " ".join(alternativas.values())
-    return questao["enunciado"]
-
-
-def normalizar(texto):
-    # minúsculas, sem acento e sem pontuação, só para comparar se duas questões são iguais
-    texto = texto.lower()
-    texto = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii")
-    texto = re.sub(r"[^a-z0-9]+", " ", texto)
-    return texto.strip()
-
-
-df = pd.read_json(ARQUIVO_QUESTOES, lines=True)
-print("Questões lidas:", len(df))
-
-df["texto"] = df.apply(montar_texto, axis=1)
-df["texto_normalizado"] = df["texto"].apply(normalizar)
-
-# As bancas repetem questões entre concursos. Se uma cópia cair no treino e outra no
-# teste, o modelo "decora" e o resultado fica melhor do que deveria. Então tiramos as repetidas.
-# Se a mesma questão aparece em subáreas diferentes, não dá para saber o rótulo certo: tiramos todas.
-qtd_subareas = df.groupby("texto_normalizado")["subarea"].nunique()
-textos_ambiguos = qtd_subareas[qtd_subareas > 1].index
-df = df[~df["texto_normalizado"].isin(textos_ambiguos)]
-print("Removidas por rótulo ambíguo:", len(textos_ambiguos))
-
-antes = len(df)
-df = df.drop_duplicates(subset="texto_normalizado").reset_index(drop=True)
-print("Removidas por duplicata:", antes - len(df))
-print("Questões usadas:", len(df))
-print(df["subarea"].value_counts(), "\n")
+df = carregar_questoes()
 
 
 # ============================================================
@@ -254,42 +216,8 @@ avaliar("spaCy", busca_spacy.best_estimator_, X_spacy[teste.index], busca_spacy)
 # ============================================================
 # 5. Representação 3: embeddings do BERT
 # ============================================================
-import torch
-from transformers import AutoTokenizer, AutoModel
-
-
-def gerar_embeddings_bert(nome_modelo, textos):
-    arquivo_cache = f"{PASTA_CACHE}/{nome_modelo.replace('/', '_')}.npy"
-    if os.path.exists(arquivo_cache):
-        X = np.load(arquivo_cache)
-        if len(X) == len(textos):  # se o dataset mudou, gera de novo
-            print("Usando embeddings salvos em", arquivo_cache)
-            return X
-
-    dispositivo = "cuda" if torch.cuda.is_available() else "cpu"
-    tokenizador = AutoTokenizer.from_pretrained(nome_modelo)
-    modelo = AutoModel.from_pretrained(nome_modelo).to(dispositivo)
-    modelo.eval()
-
-    embeddings = []
-    with torch.no_grad():  # não estamos treinando o BERT, só usando
-        for i in range(0, len(textos), 16):  # de 16 em 16 textos
-            lote = textos[i:i + 16]
-            entrada = tokenizador(lote, padding=True, truncation=True, max_length=512, return_tensors="pt").to(dispositivo)
-            saida = modelo(**entrada).last_hidden_state  # um vetor de 768 posições por token
-
-            # média dos vetores dos tokens, ignorando o padding (attention_mask = 0)
-            mascara = entrada["attention_mask"].unsqueeze(-1)
-            media = (saida * mascara).sum(dim=1) / mascara.sum(dim=1)
-            embeddings.append(media.cpu().numpy())
-            print(f"  {min(i + 16, len(textos))}/{len(textos)} questões", end="\r")
-    print()
-
-    X = np.vstack(embeddings)
-    np.save(arquivo_cache, X)
-    return X
-
-
+# Gerar os embeddings é a parte pesada. Em computador sem GPU, gere no Google Colab
+# (veja classificacao/README.md) e copie os .npy para classificacao/cache/: aqui eles são reaproveitados.
 for nome_modelo in MODELOS_BERT:
     print(f"========== BERT {nome_modelo} ==========")
     X_bert = gerar_embeddings_bert(nome_modelo, list(df["texto"]))
