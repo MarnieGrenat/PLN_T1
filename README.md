@@ -25,7 +25,7 @@ dataset/questoes.jsonl, dataset/<subarea>/<ano>.jsonl, dataset/descartes.csv
         ├──▶ scraper/estatisticas_dataset.py ──▶ dataset/ESTATISTICAS.md
         │
         ▼  similaridade/construir_pares.py  (spaCy pt_core_news_lg)
-similaridade/palavras_top200.csv, similaridade/pares_anotador{1,2}.csv
+similaridade/palavras_top200.csv, similaridade/pares_{gabriela,renato}.csv
         │
         ▼  (anotação manual, escala Likert 1–5) + similaridade/avaliar_concordancia.py
 similaridade/similaridade_final.csv, similaridade/CONCORDANCIA.md
@@ -53,7 +53,7 @@ grava um arquivo de anotação por anotador. A escala Likert (1 a 5) e as instru
 [`similaridade/README.md`](similaridade/README.md).
 
 Os pares foram refeitos sobre o corpus ampliado (versão 2) e **aguardam anotação**
-(`pares_anotador1.csv` e `pares_anotador2.csv`, com a coluna `similaridade` vazia). A versão 1, feita
+(`pares_gabriela.csv` e `pares_renato.csv`, com a coluna `similaridade` vazia). A versão 1, feita
 sobre as 274 primeiras questões e já anotada pelos dois alunos, está arquivada em `similaridade/v1/`.
 
 Depois da anotação, `similaridade/avaliar_concordancia.py` une as duas anotações, mede a concordância

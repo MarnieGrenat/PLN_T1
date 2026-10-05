@@ -3,7 +3,7 @@
 """
 Une as anotações dos dois alunos, mede a concordância e gera o CSV final (itens d e e).
 
-Entradas : similaridade/pares_anotador1.csv e pares_anotador2.csv
+Entradas : similaridade/pares_gabriela.csv (anotador 1) e pares_renato.csv (anotador 2)
 Saídas   : similaridade/similaridade_final.csv  (palavra_1, palavra_2, similaridade_a1,
                                                  similaridade_a2, similaridade_media)
            similaridade/CONCORDANCIA.md         (métricas de concordância)
@@ -93,8 +93,8 @@ def interpretar_kappa(k):
 
 
 def main():
-    n1, ordem = ler_anotacoes(DIR / "pares_anotador1.csv")
-    n2, _ = ler_anotacoes(DIR / "pares_anotador2.csv")
+    n1, ordem = ler_anotacoes(DIR / "pares_gabriela.csv")
+    n2, _ = ler_anotacoes(DIR / "pares_renato.csv")
     if set(n1) != set(n2):
         raise SystemExit(f"os arquivos não têm os mesmos pares: só no 1 = {set(n1) - set(n2)}, "
                          f"só no 2 = {set(n2) - set(n1)}")
@@ -122,10 +122,10 @@ def main():
               f"{n} pares anotados por 2 alunos na escala Likert de 1 a 5. "
               "A nota final de cada par (`similaridade_media`) é a média das duas.", "",
               "## Distribuição das notas", "",
-              "| nota | anotador 1 | anotador 2 |", "|:-:|--:|--:|"]
+              "| nota | Gabriela (a1) | Renato (a2) |", "|:-:|--:|--:|"]
     c1, c2 = Counter(a), Counter(b)
     linhas += [f"| {v} | {c1[v]} | {c2[v]} |" for v in NOTAS]
-    linhas += ["", f"Média das notas: anotador 1 = {sum(a) / n:.2f}, anotador 2 = {sum(b) / n:.2f}.", "",
+    linhas += ["", f"Média das notas: Gabriela (a1) = {sum(a) / n:.2f}, Renato (a2) = {sum(b) / n:.2f}.", "",
                "## Métricas", "",
                "| métrica | valor |", "|---|--:|",
                f"| concordância exata | {100 * exata:.0f}% |",
@@ -142,7 +142,7 @@ def main():
                "um use a escala de forma mais compressa que o outro. Interpretação do kappa: escala de "
                "Landis & Koch (1977).", "",
                "## Maiores divergências", "",
-               "| par | anotador 1 | anotador 2 |", "|---|:-:|:-:|"]
+               "| par | Gabriela (a1) | Renato (a2) |", "|---|:-:|:-:|"]
     for i in sorted(range(n), key=lambda i: -difs[i])[:10]:
         if difs[i] >= 2:
             linhas.append(f"| {ordem[i][0]} – {ordem[i][1]} | {a[i]} | {b[i]} |")

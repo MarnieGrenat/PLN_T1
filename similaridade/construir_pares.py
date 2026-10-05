@@ -7,7 +7,8 @@ Corpus de similaridade de palavras (Trabalho 1, item 2).
 2. spaCy (pt_core_news_lg): tokeniza, lematiza e remove stopwords
 3. escolhe os 200 lemas mais representativos
 4. sorteia 100 pares disjuntos (cada palavra aparece em exatamente um par)
-5. grava os arquivos de anotação (um por anotador, mesma ordem de pares)
+5. grava os arquivos de anotação (um por anotador, mesma ordem de pares), com nome do anotador e
+   escala Likert no topo
 
 Uso (a partir da raiz do repositório):
     python3 similaridade/construir_pares.py
@@ -26,6 +27,7 @@ DATASET = RAIZ / "dataset" / "questoes.jsonl"
 DIR = Path(__file__).resolve().parent
 
 N_PALAVRAS, N_PARES, SEMENTE = 200, 100, 42
+ANOTADORES = {"gabriela": "Gabriela Dellamora", "renato": "Renato Trindade"}   # anotador 1 e 2
 CLASSES = {"NOUN", "VERB", "ADJ"}          # palavras de conteúdo; PROPN/X (siglas, código) ficam fora
 MIN_LEN = 3
 # vocabulário de enunciado de prova, que não diz nada sobre a área
@@ -93,9 +95,13 @@ def main():
     rng.shuffle(sorteadas)
     pares = [(sorteadas[2 * k], sorteadas[2 * k + 1]) for k in range(N_PARES)]
 
-    for nome in ("anotador1", "anotador2"):
-        with open(DIR / f"pares_{nome}.csv", "w", newline="", encoding="utf-8") as f:
+    for chave, nome in ANOTADORES.items():
+        with open(DIR / f"pares_{chave}.csv", "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
+            w.writerow([f"Anotador: {nome}", "", ""])
+            w.writerow(["Escala:", "", ""])
+            for nota, rotulo in ESCALA.items():
+                w.writerow([nota, rotulo, ""])
             w.writerow(["palavra_1", "palavra_2", "similaridade"])
             for a, b in pares:
                 w.writerow([a, b, ""])

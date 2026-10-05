@@ -1,3 +1,10 @@
+Anotador: Renato Trindade,,
+Escala:,,
+1,Totalmente dissimilar (ou Muito diferente),
+2,Parcialmente dissimilar (ou Um pouco diferente),
+3,"Neutro / Indiferente (Nem similar, nem dissimilar)",
+4,Parcialmente similar (ou Um pouco parecido),
+5,Totalmente similar (ou Muito parecido),
 palavra_1,palavra_2,similaridade
 análise,índice,
 integridade,incidente,
