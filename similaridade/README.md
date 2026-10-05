@@ -6,10 +6,14 @@ Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + al
 
 | arquivo | conteúdo |
 |---|---|
-| `palavras_top200.csv` | as 200 lemas mais representativas: `rank, lema, frequencia, textos` |
+| `palavras_top200.csv` | os 200 lemas mais representativos: `rank, lema, frequencia, textos` |
 | `pares_anotador1.csv` | 100 pares para o anotador 1: `palavra_1, palavra_2, similaridade` |
 | `pares_anotador2.csv` | os mesmos 100 pares, mesma ordem, para o anotador 2 |
-| `construir_pares.py` | gera tudo (semente fixa, resultado reprodutível) |
+| `construir_pares.py` | gera as palavras e os pares (semente fixa, resultado reprodutível) |
+| `avaliar_concordancia.py` | une as anotações, calcula a concordância e gera o CSV final |
+| `similaridade_final.csv` | **resultado**: `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
+| `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
+| `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
 
 ## Como foi gerado
 
