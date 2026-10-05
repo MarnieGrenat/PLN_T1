@@ -49,3 +49,18 @@ Conjunto de teste de 300 questões (20% de 1500; 3 classes, então o acaso fica 
 | BERT bert-base-uncased | 0.580 | 0.579 | 0.609 (0.014) |
 
 Ficam em `classificacao/resultados/`: tabela e gráfico de comparação (`comparacao.csv`, `comparacao.png`), matrizes de confusão, questões erradas por modelo, curva do F1 pelo tamanho da BoW e as palavras mais importantes de cada subárea no TF-IDF.
+
+![Comparação das representações no conjunto de teste (acurácia e F1 macro)](resultados/comparacao.png)
+
+*Acurácia e F1 macro de cada representação no conjunto de teste (300 questões).*
+
+BERTimbau obteve o melhor resultado (acurácia 0,657), significativamente acima do spaCy e do BERT em inglês (p < 0,05), mas sem diferença significativa em relação ao TF-IDF (0,617; p = 0,24). O BERT em inglês, mesmo sem ser treinado em português, ficou bem acima do acaso (0,58), o que sugere que o vocabulário técnico compartilhado entre os idiomas carrega muito sinal. As diferenças entre TF-IDF, spaCy e BERT em inglês não são significativas com 300 questões de teste, e todos os modelos ficam perto do teto imposto por rótulos ruidosos (o rótulo vem do concurso, não do assunto da questão).
+
+
+Escolhemos o tamanho do BoW plotando os resultados e usando o método do cotovelo:
+
+![Curva do F1 macro pelo tamanho da BoW](resultados/curva_tamanho_bow.png)
+
+*F1 macro (média e desvio da validação cruzada de 5 partes no treino) em função do tamanho da BoW (`max_features`), com os demais parâmetros fixos nos melhores valores.*
+
+O F1 macro sobe rápido até cerca de 5.000 palavras (de 0,52 com 100 palavras para 0,63 com 5.000) e a partir daí atinge um platô: com 10.000 e 20.000 palavras fica entre 0,62 e 0,64, dentro de um desvio-padrão (cerca de 0,02) do valor de 5.000. A busca em grade escolheu 20.000 por ter a maior média (0,636), mas a diferença para 5.000 não é significativa, então o ganho além desse ponto é pequeno. A mesma busca escolheu unigramas e bigramas (`ngram_range=(1, 2)`), `min_df=1` e `C=10`.
