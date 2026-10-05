@@ -1,0 +1,2 @@
+Modelo: Claude Opus 5.5 (claude-opus-5-5)
+Data: 2026-10-05
