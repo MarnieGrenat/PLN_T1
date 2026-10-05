@@ -1,6 +1,6 @@
 # Corpus de similaridade de palavras
 
-Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + alternativas).
+Itens 2 e 4 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + alternativas).
 
 > **Versão 2.** Refeito sobre o corpus ampliado (1500 questões), anotado pelos dois alunos. Resultado em
 > `similaridade_final.csv`, concordância em [`CONCORDANCIA.md`](CONCORDANCIA.md) e *dataset card* em
@@ -16,11 +16,11 @@ Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + al
 | `construir_pares.py` | gera as palavras e os pares (semente fixa, resultado reprodutível) |
 | `avaliar_concordancia.py` | une as anotações, calcula a concordância e gera o CSV final |
 | `similaridade_final.csv` | **resultado**: `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
-| `avaliar_modelos.py` | testa spaCy, BERT e um LLM contra a nota humana (Spearman, IC por bootstrap) |
-| `colab_modelos.ipynb` | roda BERT e LLM aberto no Google Colab (sem GPU local) |
-| `resultados/` | previsões de cada modelo (`pred_*.csv`) e contextos do corpus (`contextos.json`) |
-| `ANALISE_MODELOS.md` | tabela de correlações dos modelos com os humanos (gerada) |
-| `COMPARACAO.md` | análise e comparação dos resultados (item b) |
+| `topico_4/` | **item 4**: notebook `similaridade_modelos.ipynb` (spaCy, BERTimbau, `bert-base-uncased` e Claude nos dois datasets), dataset da aula, notas do Claude (`claude/`) e tabela/gráficos de comparação |
+| `COMPARACAO.md` | **análise e comparação dos modelos (item 4b)** |
+| `avaliar_modelos.py`, `colab_modelos.ipynb` | rodada preliminar do item 4 (só o corpus próprio; BERT em contexto, Claude Sonnet 5.5) |
+| `resultados/` | previsões da rodada preliminar (`pred_*.csv`) e contextos do corpus (`contextos.json`) |
+| `ANALISE_MODELOS.md` | tabela de correlações da rodada preliminar (gerada por `avaliar_modelos.py`) |
 | `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
 | `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
 
@@ -48,19 +48,34 @@ Preencha a coluna `similaridade` com um número de 1 a 5:
 
 Cada anotador deve preencher o seu arquivo **sem ver as respostas do outro**.
 
-## Teste com modelos de linguagem
+## Teste com modelos de linguagem (item 4)
 
-`avaliar_modelos.py` compara a nota humana (`similaridade_media`) com a de três tipos de modelo:
+O experimento final está em [`topico_4/similaridade_modelos.ipynb`](topico_4/similaridade_modelos.ipynb). Ele testa os
+100 pares do nosso dataset e os 80 pares do dataset feito em aula (`topico_4/dataset_aula.csv`) com:
 
 | modelo | como mede a similaridade |
 |---|---|
 | estático: spaCy `pt_core_news_lg` | cosseno entre os vetores das duas palavras |
-| transformer: BERTimbau e `bert-base-uncased` | cosseno entre vetores (média das 4 últimas camadas) da palavra isolada e da palavra em até 20 contextos reais do corpus de questões |
-| LLM: Claude Sonnet 5.5 | recebe só o par e a mesma escala Likert e dá a nota (feita em conversa, às cegas em relação às notas humanas; ver `resultados/LLM_CLAUDE.md`). `avaliar_modelos.py` também sabe chamar a API da Anthropic ou um LLM aberto via Hugging Face (nota esperada pelas probabilidades dos dígitos 1–5) |
+| transformer: BERTimbau e `bert-base-uncased` | cosseno entre os vetores da palavra isolada (média dos sub-tokens) |
+| LLM: Claude Opus 5.5 | recebe só os pares e a mesma escala dos anotadores e dá a nota, em sessão separada e às cegas (prompt e respostas em `topico_4/claude/`) |
 
-A métrica é a correlação de Spearman com a nota humana (com IC 95% por bootstrap), comparada com o Spearman entre os
-dois anotadores como referência. Se tiver o dataset de palavras feito em aula, passe `--dataset-aula arquivo.csv`
-(colunas `palavra_1,palavra_2,similaridade`) e as métricas saem separadas por fonte.
+Métrica: correlação de Spearman com a média dos anotadores. Resultado (nosso / aula): Claude 0,53 / 0,48,
+BERTimbau 0,22 / −0,01, spaCy 0,17 / −0,03, `bert-base-uncased` −0,04 / −0,01. Análise completa em
+[`COMPARACAO.md`](COMPARACAO.md).
+
+Para rodar o notebook (o Claude não é chamado por ele: as notas são lidas de `topico_4/claude/`):
+
+```bash
+uv add spacy transformers torch google-genai pandas scipy matplotlib
+```
+
+Depois, abra o notebook no Jupyter ou no VS Code e rode as células em ordem (BERT fica mais rápido com GPU).
+
+### Rodada preliminar
+
+`avaliar_modelos.py` foi a primeira versão do item 4, só com o nosso dataset. Ela testa também o BERT com a palavra em
+até 20 contextos do corpus (média das 4 últimas camadas) e um LLM pela API da Anthropic ou um LLM aberto via Hugging
+Face. Os resultados estão em `ANALISE_MODELOS.md` e batem com os da rodada final.
 
 ```bash
 python3 similaridade/avaliar_modelos.py --modelos contextos spacy        # local

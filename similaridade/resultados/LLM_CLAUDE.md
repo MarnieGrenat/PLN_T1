@@ -1,5 +1,7 @@
 # Notas do LLM (Claude Sonnet 5.5)
 
+> **Rodada preliminar.** A rodada final do LLM (Claude Opus 5.5, sessão separada e às cegas, nos dois datasets) está em [`../topico_4/claude/`](../topico_4/claude/). As duas rodadas concordam bem entre si no corpus próprio (Spearman 0,72; 71% de notas iguais; nenhuma diferença maior que 1 ponto). Veja [`../COMPARACAO.md`](../COMPARACAO.md).
+
 Arquivo de previsões: [`pred_llm-claude-sonnet-5-5.csv`](pred_llm-claude-sonnet-5-5.csv).
 
 ## Como foram geradas

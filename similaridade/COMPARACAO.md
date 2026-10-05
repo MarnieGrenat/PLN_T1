@@ -1,56 +1,131 @@
-# Similaridade de palavras: comparação dos modelos
+# Similaridade de palavras: comparação dos modelos (item 4)
 
-Análise dos resultados de [`ANALISE_MODELOS.md`](ANALISE_MODELOS.md) (gerado por `avaliar_modelos.py`). Nota humana de
-referência: média dos dois anotadores em `similaridade_final.csv` (100 pares do corpus próprio). Métrica: correlação de
-Spearman, com intervalo de confiança de 95% por bootstrap.
+Resumo da análise do item 4. O experimento completo, com código, gráficos e as maiores divergências de cada modelo,
+está em [`topico_4/similaridade_modelos.ipynb`](topico_4/similaridade_modelos.ipynb) (seção 5). Os números saem de
+[`topico_4/comparacao_modelos.csv`](topico_4/comparacao_modelos.csv).
 
-> **Aviso:** o LLM avaliado é o Claude Sonnet 5.5, e esta análise foi escrita por ele. As notas do LLM foram dadas às cegas
-> (só as palavras de cada par), mas quem lê deve ter isso em mente. Detalhes em
-> [`resultados/LLM_CLAUDE.md`](resultados/LLM_CLAUDE.md).
+> **Uso de IA.** O LLM avaliado é o Claude. As notas dele foram dadas às cegas, em uma sessão separada que só via os
+> pares, sem as notas humanas (prompt em [`topico_4/claude/PROMPT.md`](topico_4/claude/PROMPT.md)). O Claude também
+> ajudou a escrever o código e este texto, então quem lê deve ter isso em mente. Detalhes em [`../USO_DE_IA.md`](../USO_DE_IA.md).
+
+## Datasets e modelos
+
+| dataset | pares | escala | como os pares foram escolhidos |
+|---|--:|---|---|
+| nosso (`similaridade_final.csv`) | 100 | Likert 1–5 | sorteados entre os 200 lemas mais frequentes do corpus de questões |
+| aula (`topico_4/dataset_aula.csv`) | 80 | 0–1 | escolhidos por serem próximos (sinônimos, quase sinônimos e conceitos vizinhos) |
+
+| modelo | tipo | como mede a similaridade |
+|---|---|---|
+| spaCy `pt_core_news_lg` | estático | cosseno entre os vetores das duas palavras |
+| BERTimbau (`neuralmind/bert-base-portuguese-cased`) | transformer | cosseno entre os vetores da palavra isolada (média dos sub-tokens, última camada) |
+| `bert-base-uncased` | transformer | idem |
+| Claude Opus 5.5 | LLM | recebe a mesma escala e as mesmas instruções dos anotadores e dá a nota |
+
+Métrica: correlação de Spearman entre a nota do modelo e a média dos dois anotadores. O Spearman só olha a ordem dos
+pares, então as escalas diferentes (cosseno, 1–5, 0–1) não atrapalham.
 
 ## Resultados
 
-| modelo | tipo | Spearman | IC 95% |
-|---|---|--:|---|
-| Claude Sonnet 5.5 (nota 1–5) | LLM | **0,545** | [0,38; 0,70] |
-| spaCy `pt_core_news_lg` | estático | 0,173 | [0,01; 0,35] |
-| `bert-base-uncased` (palavra em contexto) | transformer | −0,051 | [−0,26; 0,15] |
-| `bert-base-uncased` (palavra isolada) | transformer | −0,036 | [−0,23; 0,15] |
+| modelo | nosso (100 pares) | aula (80 pares) |
+|---|:-:|:-:|
+| **Claude Opus 5.5** | **0,53** (p < 0,001) | **0,48** (p < 0,001) |
+| BERTimbau | 0,22 (p = 0,03) | −0,01 (p = 0,92) |
+| spaCy `pt_core_news_lg` | 0,17 (p = 0,09) | −0,03 (p = 0,81), 75 pares¹ |
+| `bert-base-uncased` | −0,04 (p = 0,70) | −0,01 (p = 0,90) |
+| *humanos (a1 x a2)* | *0,27* | *0,76* |
+| *teto realista para um modelo²* | *≈ 0,65* | *≈ 0,93* |
 
-**Referência humana.** Os dois anotadores têm Spearman 0,265 entre si. Como a nota de comparação é a média dos dois
-(menos ruidosa que um anotador só), a fórmula de Spearman-Brown dá confiabilidade 0,42 e, portanto, um teto realista de
-cerca de **0,65** para qualquer modelo. Em relação a esse teto, o Claude chega a uns 84%, o spaCy a uns 27% e o BERT a 0%.
+¹ Cinco palavras do dataset da aula não têm vetor no spaCy (parsear, desalocar, deployar, versionar, tokenizar).
 
-## Leitura dos resultados
+² A nota de comparação é a média de dois anotadores. Pela fórmula de Spearman-Brown, a confiabilidade dessa média é
+2r/(1+r), em que r é a concordância entre os anotadores. Um modelo perfeito correlacionaria no máximo √(2r/(1+r)) com
+ela: 0,65 no nosso dataset e 0,93 no da aula.
 
-1. **O LLM é o melhor, com folga.** Seu intervalo de confiança ([0,38; 0,70]) mal encosta no do spaCy ([0,01; 0,35]), então
-   a diferença é real, apesar da amostra pequena. Correlaciona de forma parecida com os dois anotadores (0,47 e 0,48), isto é,
-   não está "copiando" o critério de só um deles.
-2. **O modelo estático tem sinal fraco.** Os vetores do spaCy capturam sobretudo coocorrência/tema geral, o que dá
-   cosseno alto para pares que os humanos acham sem relação (ex.: `informação`–`verificar`, `backup`–`usuário`, `integridade`–`incidente`).
-   Curiosamente correlaciona mais com a Gabriela (0,34) do que com o Renato (0,12), o que reflete que os dois
-   anotadores usaram a escala de formas diferentes.
-3. **O `bert-base-uncased` não tem sinal (≈ 0).** Era esperado: o modelo é treinado só em inglês, e palavras do português viram
-   pedaços de subpalavras sem relação com seu significado. Não é um resultado sobre "BERT" em geral e sim sobre
-   usar um modelo monolíngue em inglês em outra língua. Usar contexto (média de até 20 ocorrências no corpus) não ajudou
-   (−0,05 contra −0,04): o problema é o modelo, não a falta de contexto. O BERT em contexto e o isolado concordam entre si
-   (0,56), mas nenhum dos dois concorda com os humanos.
-4. **Os modelos quase não concordam entre si**, exceto spaCy–Claude (0,37) e as duas variantes do BERT (0,56). A discordância
-   entre modelos é parte do problema: não há uma noção única de "similaridade" nos pares sorteados.
-5. **Onde o LLM erra.** As maiores divergências são em pares abstratos que os humanos acharam moderadamente parecidos
-   (nota 2,5) e o LLM acha sem relação (nota 1): `base`–`gerar`, `componente`–`acessar`, `modelo`–`autenticação`,
-   `virtual`–`seguro`. Em sentido contrário, o LLM dá 2 para pares que ambos humanos deram 1 (`integridade`–`incidente`,
-   `teste`–`ação`, `informação`–`verificar`): vê relação temática onde os humanos não viram.
+A ordem é a mesma nos dois datasets: **Claude > BERTimbau ≈ spaCy > BERT em inglês**. Só o Claude tem correlação
+clara com os humanos nos dois. No dataset da aula, os três modelos de vetores ficam em zero. Em relação ao teto, o
+Claude chega a uns 80% no nosso dataset e a uns 50% no da aula.
+
+![Spearman por modelo e dataset](topico_4/comparacao_modelos.png)
+
+## Análise
+
+**As duas referências humanas são diferentes.** No dataset da aula os anotadores concordam bastante (0,76) e quase
+todos os pares são próximos: o desafio é separar "igual" de "parecido". No nosso, os pares foram sorteados e quase
+nenhum tem relação (média humana de 1,5 em 5). A concordância é baixa (0,27) porque os anotadores usaram critérios
+diferentes: a Gabriela anotou **similaridade de significado** e o Renato anotou **relação entre as palavras**
+(código–proteção recebeu 1 e 5). Por isso as diferenças pequenas entre modelos no nosso dataset não são
+interpretáveis.
+
+**spaCy (estático).** O cosseno mede **co-ocorrência em texto geral**, não sinonímia nem relação dentro de TI:
+- Pares que só são próximos na área ficam com cosseno baixo (código–proteção 0,19, host–comando 0,21).
+- Palavras abstratas e frequentes ficam próximas sem ter o mesmo sentido (operacional–utilização 0,67).
+- No dataset da aula falham os anglicismos e termos técnicos: thread–fluxo, iteração–loop e kernel–núcleo são
+  sinônimos para os humanos, mas ficam entre 0,19 e 0,30.
+- O spaCy separa os dois datasets como um todo (cosseno médio de 0,31 nos pares sorteados contra 0,50 nos pares da
+  aula). Mas não ordena os pares **dentro** do dataset da aula, que é o que a tarefa pede.
+
+**BERT (transformer).** O BERTimbau é o melhor modelo de vetores no nosso dataset (0,22), mas fica em zero no da
+aula:
+- Os cossenos ficam em uma faixa estreita e alta. A média nos pares sorteados (0,62) é **maior** que nos pares
+  similares da aula (0,58).
+- É o efeito da **anisotropia**: os vetores do BERT apontam mais ou menos para a mesma direção, então o cosseno diz
+  pouco.
+- Além disso, o BERT foi treinado para representar palavras em frases. Com a palavra sozinha, o vetor reflete mais a
+  forma e os sub-tokens do que o sentido.
+
+**O `bert-base-uncased`** fica em zero nos dois datasets. Ele foi treinado só em inglês e quebra as palavras em
+português em pedaços sem sentido: "criptografar" vira `cr ##ip ##to ##gra ##far`, e no BERTimbau vira
+`cripto ##graf ##ar`. O idioma do modelo importa mais do que a arquitetura. Na rodada preliminar (abaixo) também
+testamos esse modelo com a palavra **em contexto**, com a média dos vetores em até 20 frases do corpus de questões. O
+resultado continuou em zero (−0,05): o problema é o modelo, não a falta de contexto.
+
+**Claude (LLM).** É o único que funciona nos dois datasets:
+- Ele recebe em linguagem natural **o critério** do que é "similar" e a mesma escala dos anotadores. Os modelos de
+  vetores só calculam uma distância e não têm como saber que critério usar.
+- No nosso dataset ele seguiu a similaridade de significado. Deu 1 para código–proteção e host–comando, que o Renato
+  avaliou com 5, e é daí que vêm as suas maiores divergências com a média.
+- No dataset da aula é mais rigoroso que os humanos: deu 0,5 para versionar–comitar e memória–armazenamento, que os
+  humanos avaliaram com 1.
+- Mesmo sendo o melhor, fica longe da concordância humana nesse dataset (0,48 contra 0,76).
+
+**Estabilidade do LLM.** Antes da rodada final houve uma rodada preliminar com outro modelo da mesma família (Claude
+Sonnet 5.5, em conversa, também às cegas) no nosso dataset. As notas das duas rodadas têm Spearman 0,72 entre si: 71%
+são idênticas e nenhuma difere em mais de 1 ponto. A correlação com os humanos também foi parecida (0,55 contra 0,53).
+O resultado do LLM não depende de uma rodada específica.
+
+## Conclusão
+
+Medir similaridade de palavras com **cosseno entre vetores** funcionou mal com os dois tipos de modelo testados. Os
+vetores estáticos medem co-ocorrência em texto geral, e o BERT com a palavra isolada gera vetores pouco informativos.
+Os dois falham principalmente quando é preciso separar graus de similaridade entre pares que já são próximos, como
+no dataset da aula. O LLM consegue fazer isso porque recebe o critério da anotação, e foi o único com correlação clara
+(p < 0,001) nos dois datasets.
 
 ## Limitações
 
-- **Teto baixo e ruidoso.** Com concordância humana de 0,27, diferenças pequenas entre modelos não são interpretáveis; só as
-  grandes (LLM contra os demais) são confiáveis.
-- **100 pares, quase todos sem relação.** A maioria dos pares tem nota humana 1; há pouca variação para medir.
-- **Falta o BERT em português.** O `bert-base-uncased` pedido no enunciado foi testado, mas o BERTimbau
-  (`neuralmind/bert-base-portuguese-cased`) ainda não: precisa de GPU/Colab (`colab_modelos.ipynb`). É esperado que ele
-  fique bem acima do BERT em inglês, e talvez perto do spaCy.
-- **Dataset da aula.** Não temos o dataset de palavras feito em aula; `--dataset-aula` aceita o CSV e separa as métricas.
-- **LLM não reprodutível por script.** As notas vieram de uma conversa, em uma passada. Uma versão por API
-  (`--llm-backend anthropic`) ou com LLM aberto (`--llm-backend hf`) está pronta no `avaliar_modelos.py`.
-- **Notas inteiras do LLM** geram muitos empates (54 pares com nota 1), o que limita o Spearman possível.
+- **Referência ruidosa no nosso dataset.** Com concordância humana de 0,27 e critérios diferentes entre os
+  anotadores, só as diferenças grandes (LLM contra os demais) são confiáveis.
+- **Tamanho.** Com 80 a 100 pares, diferenças como a entre spaCy e BERTimbau no nosso dataset não são significativas.
+- **Empates.** As notas do Claude e dos humanos são discretas (70 dos 100 pares do nosso dataset receberam 1 do
+  Claude), o que limita o Spearman.
+- **Reprodutibilidade do LLM.** As notas vieram de sessões de conversa, registradas em `topico_4/claude/`, e não de
+  uma chamada por script. A rodada preliminar mostra que mudam pouco, mas podem mudar.
+- **Gemini.** Também foi testado pela API gratuita, mas respondeu 503 (sobrecarregado) e ficou fora da comparação.
+
+## Rodada preliminar
+
+Antes do notebook do `topico_4`, `avaliar_modelos.py` avaliou só o nosso dataset. Os resultados estão em
+[`ANALISE_MODELOS.md`](ANALISE_MODELOS.md) e as previsões em `resultados/`. Diferenças em relação à rodada final:
+- BERT com a média das 4 últimas camadas, com a palavra isolada e em contexto;
+- LLM Claude Sonnet 5.5 ([`resultados/LLM_CLAUDE.md`](resultados/LLM_CLAUDE.md));
+- sem o BERTimbau e sem o dataset da aula.
+
+Os números batem com a rodada final:
+
+| modelo | Spearman (preliminar) | IC 95% |
+|---|--:|---|
+| Claude Sonnet 5.5 | 0,545 | [0,38; 0,70] |
+| spaCy | 0,173 | [0,01; 0,35] |
+| `bert-base-uncased` (contexto) | −0,051 | [−0,26; 0,15] |
+| `bert-base-uncased` (isolada) | −0,036 | [−0,23; 0,15] |

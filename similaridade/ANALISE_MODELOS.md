@@ -1,5 +1,7 @@
 # Similaridade de palavras: modelos de linguagem vs. anotação humana
 
+> **Rodada preliminar** (só o corpus próprio). O resultado final do item 4, com o dataset da aula e o BERTimbau, está em [`topico_4/similaridade_modelos.ipynb`](topico_4/similaridade_modelos.ipynb) e a análise em [`COMPARACAO.md`](COMPARACAO.md).
+
 Gerado por `similaridade/avaliar_modelos.py`. A nota humana é `similaridade_media` (média dos dois anotadores). Métrica principal: **correlação de Spearman** (a escala dos modelos não é a Likert: cosseno vai de -1 a 1, e só a ordenação dos pares importa). IC 95% por bootstrap (1000 reamostragens dos pares).
 
 ## Fonte: corpus próprio (100 pares)

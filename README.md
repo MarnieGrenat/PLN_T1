@@ -4,13 +4,15 @@ Trabalho 1 de Processamento de Linguagem Natural (PUCRS): construção de um cor
 concursos de TI (subáreas **redes**, **segurança** e **sistemas**) e de um corpus de similaridade de
 palavras derivado dele.
 
+> **Uso de IA:** ver [`USO_DE_IA.md`](USO_DE_IA.md).
+
 ## Estrutura
 
 | pasta | conteúdo |
 |---|---|
 | `scraper/` | coleta (web scraping) das provas e gabaritos e processamento em questões estruturadas |
 | `dataset/` | corpus de questões: texto bruto, questões por subárea/ano, estatísticas e *dataset card* |
-| `similaridade/` | corpus de similaridade de palavras (200 palavras, 100 pares, anotações, CSV final) e teste com spaCy, BERT e LLM |
+| `similaridade/` | corpus de similaridade de palavras (200 palavras, 100 pares, anotações, CSV final; item 2) e teste com spaCy, BERT e LLM (item 4, em `similaridade/topico_4/`) |
 | `classificacao/` | classificação das questões por subárea (item 3), comparando BoW/TF-IDF, spaCy e BERT |
 
 ## Pipeline
@@ -59,6 +61,13 @@ arquivada em `similaridade/v1/`.
 ([`similaridade/CONCORDANCIA.md`](similaridade/CONCORDANCIA.md)) e gera o CSV final
 [`similaridade/similaridade_final.csv`](similaridade/similaridade_final.csv), com a nota de cada anotador
 e a média das duas. *Dataset card*: [`similaridade/DATASET_CARD.md`](similaridade/DATASET_CARD.md).
+
+### 4. Similaridade de palavras com modelos de linguagem (item 4)
+
+[`similaridade/topico_4/similaridade_modelos.ipynb`](similaridade/topico_4/similaridade_modelos.ipynb) compara a
+nota humana com spaCy `pt_core_news_lg`, BERT (BERTimbau e `bert-base-uncased`) e um LLM (Claude Opus 5.5, às cegas).
+Usa dois datasets: o nosso (100 pares) e o feito em aula (80 pares). Só o LLM teve correlação clara com os humanos nos
+dois (Spearman 0,53 e 0,48). Análise e comparação: [`similaridade/COMPARACAO.md`](similaridade/COMPARACAO.md).
 
 ## Como executar
 
