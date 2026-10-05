@@ -16,6 +16,4 @@ Os embeddings do BERT ficam salvos em `classificacao/cache/` (fora do git) para 
 
 Ficam em `classificacao/resultados/`: tabela e gráfico de comparação (`comparacao.csv`, `comparacao.png`), matrizes de confusão, questões erradas por modelo, curva do F1 pelo tamanho da BoW e as palavras mais importantes de cada subárea no TF-IDF.
 
-## Uso de IA
 
-O código foi desenvolvido com auxílio do Claude (Anthropic); o grupo revisou, executou e analisou os resultados.
