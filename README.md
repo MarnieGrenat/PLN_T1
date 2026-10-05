@@ -30,7 +30,9 @@ similaridade/palavras_top200.csv, similaridade/pares_anotador{1,2}.csv
 ### 1. Corpus de questões (item 1)
 
 1. `scraper/scraper_pci.py` baixa provas e gabaritos (PDF) das listagens de cada subárea. Os PDFs
-   ficam versionados em partes: `scraper/dados/pdfs.zip.000` a `.003`.
+   ficam versionados em `scraper/dados/pdfs_parte01.zip`, `pdfs_parte02.zip`, … (até ~45 MB cada,
+   abaixo do limite do GitHub). Cada zip é independente e contém pastas `<slug-da-prova>/` inteiras;
+   extraia todos no mesmo diretório para reconstruir `scraper/dados/pdfs/`.
 2. O texto foi extraído com `pdftotext -layout` e compactado em `dataset/raw.zip`.
 3. `scraper/processar_dataset.py` transforma o texto bruto em questões estruturadas:
    separa as colunas de cada página, remove cabeçalhos e marcas d'água, recorta a seção de
@@ -84,7 +86,7 @@ Para refazer a extração do texto a partir dos PDFs (a coleta usa as dependênc
 têm o mesmo nome (`gabarito.pdf`):
 
 ```bash
-cat scraper/dados/pdfs.zip.00? > /tmp/pdfs.zip && unzip -q /tmp/pdfs.zip -d /tmp/pdfs
+for z in scraper/dados/pdfs_parte*.zip; do unzip -q -o "$z" -d /tmp/pdfs; done
 mkdir -p /tmp/raw
 find /tmp/pdfs -iname '*.pdf' | while read -r f; do
   pdftotext -layout "$f" "/tmp/raw/$(basename "$(dirname "$f")")__$(basename "${f%.*}").txt"

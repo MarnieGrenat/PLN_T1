@@ -7,7 +7,7 @@ Saída principal: dados/questoes.csv com as colunas
     subarea, questao, opcoes, resposta
 
 Etapas (rode em ordem):
-    python scraper_pci.py listar    # lê as listagens das 3 subáreas -> dados/provas.csv
+    python scraper_pci.py listar    # lê as listagens das 3 subáreas + buscas extras -> dados/provas.csv
     python scraper_pci.py baixar    # baixa prova + gabarito (abre um navegador)
     python scraper_pci.py manual    # alternativa ao "baixar": você baixa no seu navegador
     python scraper_pci.py extrair   # lê os PDFs e gera dados/questoes.csv
@@ -43,6 +43,32 @@ SUBAREAS = {  # a ordem define a prioridade quando --manter-sobrepostas é usado
     "seguranca": f"{BASE}/provas/seguranca-da-informacao",
     "redes": f"{BASE}/provas/redes-de-computadores",
     "sistemas": f"{BASE}/provas/analista-de-sistemas",
+}
+# No PCI, /provas/<termos> é uma busca por palavras no nome do cargo. As listagens
+# acima são aceitas inteiras; as buscas abaixo ampliam a coleta, mas cada prova
+# delas só entra numa subárea se o título casar com o padrão em TITULO_SUBAREA
+# (evita "Segurança do Trabalho", "Redes Sociais" etc.).
+BUSCAS_EXTRAS = [
+    "seguranca-cibernetica", "ciberseguranca", "seguranca-de-ti", "seguranca-de-redes",
+    "seguranca-da-tecnologia-da-informacao", "analista-de-seguranca",
+    "redes", "analista-de-redes", "tecnico-em-redes", "administrador-de-redes",
+    "infraestrutura", "analista-de-suporte", "telematica",
+    "analise-de-sistemas", "analista-de-sistema", "desenvolvimento-de-sistemas",
+    "desenvolvedor", "engenharia-de-software", "analista-de-ti",
+    "tecnologia-da-informacao",   # busca ampla (~50 páginas): pega "Analista de TI - Redes" etc.
+]
+TITULO_SUBAREA = {  # aplicados ao título sem acento e em minúsculas
+    "seguranca": re.compile(
+        r"ciber|seguranca\s+(da\s+|de\s+|em\s+)?(informacao|ti\b|tecnologia|redes|sistemas|dados|"
+        r"computacional|digital)|\b(redes|infraestrutura|ti|sistemas)\s*(e|,|/)\s*seguranca\b"
+        r"(?!\s+(do|no)\s+trabalho|\s+publica|\s+patrimonial)"),
+    "redes": re.compile(
+        r"^(?!.*eletricista)(.*\bredes?\b(?!\s+sociais|\s+d[ea]\s+(saude|atencao|ensino|esgoto|agua|distribuicao|frio|lojas)))|"
+        r"infraestrutura\s+(de\s+|em\s+)?(ti\b|tecnologia|redes|computacional)|"
+        r"comunicacao\s+de\s+dados|conectividade|telematica"),
+    "sistemas": re.compile(
+        r"anali(se|sta)\s+(de\s+)?sistemas?\b|desenvolvimento\s+(de\s+)?(sistemas|software)|"
+        r"desenvolvedor|engenh(aria|eiro)\s+de\s+software"),
 }
 ANO_MIN_PADRAO = 2020          # "últimos 6 anos"
 PAUSA = 1.5                    # segundos entre requisições (seja gentil com o site)
@@ -109,6 +135,16 @@ def selecionar_provas(args):
     if puladas:
         print(f"[info] {puladas} provas aparecem em mais de uma subárea e foram ignoradas "
               f"(use --manter-sobrepostas para incluí-las)")
+    if args.max_por_subarea:
+        # mais recentes primeiro; as já baixadas sempre entram (não desperdiça o que existe)
+        escolhidas.sort(key=lambda p: (bool(faltando(p)), -p["ano"]))
+        cont = Counter()
+        filtradas = []
+        for p in escolhidas:
+            if not faltando(p) or cont[p["subarea"]] < args.max_por_subarea:
+                cont[p["subarea"]] += 1
+                filtradas.append(p)
+        escolhidas = filtradas
     if args.limite:
         escolhidas = escolhidas[: args.limite]
     return escolhidas
@@ -123,16 +159,29 @@ def listar(args):
     sess.headers.update(HEADERS)
     provas = {}
 
-    for sub, url_base in SUBAREAS.items():
-        pagina = 1
-        while pagina <= 100:
-            url = url_base if pagina == 1 else f"{url_base}/{pagina}"
-            r = sess.get(url, timeout=30)
-            if r.status_code == 404:
-                break
-            r.raise_for_status()
-            soup = BeautifulSoup(r.text, "html.parser")
+    def baixar_pagina(url):
+        for tentativa in range(4):
+            try:
+                r = sess.get(url, timeout=30)
+                if r.status_code == 404:
+                    return None
+                r.raise_for_status()
+                return BeautifulSoup(r.content, "html.parser")
+            except requests.RequestException as e:
+                print(f"   erro ({e}), tentando de novo...")
+                time.sleep(PAUSA * 2 ** (tentativa + 1))
+        print(f"   desisti de {url}")
+        return None
 
+    def percorrer(url_base, rotulo, sub_fixa=None):
+        """Lê todas as páginas de uma listagem. sub_fixa: subárea dada a todas as provas
+        (listagem oficial); sem ela, a subárea vem só do título."""
+        pagina, total, aceitas = 1, 0, 0
+        while pagina <= args.max_paginas:
+            url = url_base if pagina == 1 else f"{url_base}/{pagina}"
+            soup = baixar_pagina(url)
+            if soup is None:
+                break
             linhas = [tr for tr in soup.select("tr") if tr.select_one('a[href*="/provas/download/"]')]
             if not linhas:
                 break
@@ -140,22 +189,49 @@ def listar(args):
                 a = tr.select_one('a[href*="/provas/download/"]')
                 href = urljoin(BASE, a["href"])
                 slug = href.rstrip("/").split("/")[-1]
+                titulo = a.get_text(" ", strip=True)
                 tds = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
                 ano = next((int(t) for t in tds if re.fullmatch(r"(19|20)\d\d", t)), None)
+                subs = [sub_fixa] if sub_fixa else []
+                t = sem_acento(titulo.lower())
+                subs += [s for s, rx in TITULO_SUBAREA.items() if rx.search(t)]
+                total += 1
+                if not subs:
+                    continue
+                aceitas += 1
                 p = provas.setdefault(slug, {
-                    "slug": slug, "url": href, "titulo": a.get_text(" ", strip=True), "ano": ano,
+                    "slug": slug, "url": href, "titulo": titulo, "ano": ano,
                     "orgao": tds[2] if len(tds) > 2 else "", "banca": tds[3] if len(tds) > 3 else "",
                     "subareas": [],
                 })
-                if sub not in p["subareas"]:
-                    p["subareas"].append(sub)
-            print(f"[{sub}] página {pagina}: {len(linhas)} provas")
+                p["subareas"] += [s for s in subs if s not in p["subareas"]]
 
-            prox = soup.find("a", string=re.compile(r"Pr[óo]xima"))
-            if not prox or prox.get("href", "#") in ("#", ""):
+            # próxima página: link "Próxima" ou, na falta dele, um link numérico maior que a atual
+            prox = soup.find("a", string=re.compile(r"Pr[óo]xima", re.I))
+            tem_prox = prox is not None and prox.get("href", "#") not in ("#", "")
+            if not tem_prox:
+                caminho = url_base.split(BASE, 1)[-1]
+                nums = [int(x.get_text(strip=True)) for x in soup.find_all("a", href=True)
+                        if x.get_text(strip=True).isdigit() and caminho in x["href"]]
+                tem_prox = any(n > pagina for n in nums)
+            print(f"[{rotulo}] página {pagina}: {len(linhas)} provas")
+            if not tem_prox:
                 break
             pagina += 1
             time.sleep(PAUSA)
+        print(f"[{rotulo}] {total} provas lidas, {aceitas} aceitas")
+        time.sleep(PAUSA)
+
+    for sub, url_base in SUBAREAS.items():
+        percorrer(url_base, sub, sub_fixa=sub)
+    buscas = BUSCAS_EXTRAS + [b.strip().strip("/") for b in args.buscas.split(",") if b.strip()]
+    if not args.sem_buscas_extras:
+        for termo in dict.fromkeys(buscas):
+            percorrer(f"{BASE}/provas/{termo}", f"busca:{termo}")
+
+    # mantém a ordem de prioridade de SUBAREAS dentro de cada prova
+    for p in provas.values():
+        p["subareas"] = [s for s in SUBAREAS if s in p["subareas"]]
 
     DIR_DADOS.mkdir(exist_ok=True)
     campos = ["slug", "url", "titulo", "ano", "orgao", "banca", "subareas"]
@@ -706,6 +782,14 @@ def main():
     ap.add_argument("--manter-sem-secao", action="store_true",
                     help="mantém provas sem seção 'conhecimentos específicos' detectada (pode incluir português etc.)")
     ap.add_argument("--limite", type=int, default=0, help="processa só as N primeiras provas (para testar)")
+    ap.add_argument("--max-por-subarea", type=int, default=0,
+                    help="no máximo N provas por subárea, as mais recentes primeiro (0 = todas)")
+    ap.add_argument("--max-paginas", type=int, default=500,
+                    help="limite de páginas lidas por listagem/busca (etapa listar, padrão 500)")
+    ap.add_argument("--buscas", default="",
+                    help="termos de busca extras, separados por vírgula (ex.: analista-de-dados,devops)")
+    ap.add_argument("--sem-buscas-extras", action="store_true",
+                    help="lê só as 3 listagens oficiais, como antes (etapa listar)")
     ap.add_argument("--espera", type=int, default=180,
                     help="segundos esperando a verificação de cada prova antes de pular (padrão 180)")
     ap.add_argument("--downloads", default=str(Path.home() / "Downloads"),

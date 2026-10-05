@@ -27,15 +27,19 @@
 .EXAMPLE
     .\run_scraper.ps1 -Manual -SkipInstall -SkipListar
 .EXAMPLE
+    .\run_scraper.ps1 -SkipInstall -SkipListar -ManterSobrepostas -MaxPorSubarea 60
+.EXAMPLE
     .\run_scraper.ps1 -SkipListar -SkipBaixar   # only re-extract from existing PDFs
 #>
 [CmdletBinding()]
 param(
     [int]$AnoMin = 2020,
     [int]$Limite = 0,
+    [int]$MaxPorSubarea = 0,
     [int]$Espera = 180,
     [switch]$ManterSobrepostas,
     [switch]$ManterSemSecao,
+    [switch]$SemBuscasExtras,
     [switch]$Manual,
     [string]$Downloads,
     [switch]$SkipInstall,
@@ -85,9 +89,12 @@ try {
     $common = @('--ano-min', "$AnoMin")
     if ($ManterSobrepostas) { $common += '--manter-sobrepostas' }
     if ($Limite -gt 0)      { $common += @('--limite', "$Limite") }
+    if ($MaxPorSubarea -gt 0) { $common += @('--max-por-subarea', "$MaxPorSubarea") }
 
     if (-not $SkipListar) {
-        Invoke-Step 'listar (exam listings -> dados\provas.csv)' $venvPython @('scraper_pci.py', 'listar', '--ano-min', "$AnoMin")
+        $listarArgs = @('scraper_pci.py', 'listar', '--ano-min', "$AnoMin")
+        if ($SemBuscasExtras) { $listarArgs += '--sem-buscas-extras' }
+        Invoke-Step 'listar (exam listings + extra searches -> dados\provas.csv)' $venvPython $listarArgs
     }
     if (-not $SkipBaixar) {
         if ($Manual) {
