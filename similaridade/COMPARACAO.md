@@ -76,9 +76,7 @@ aula:
 
 **O `bert-base-uncased`** fica em zero nos dois datasets. Ele foi treinado só em inglês e quebra as palavras em
 português em pedaços sem sentido: "criptografar" vira `cr ##ip ##to ##gra ##far`, e no BERTimbau vira
-`cripto ##graf ##ar`. O idioma do modelo importa mais do que a arquitetura. Na rodada preliminar (abaixo) também
-testamos esse modelo com a palavra **em contexto**, com a média dos vetores em até 20 frases do corpus de questões. O
-resultado continuou em zero (−0,05): o problema é o modelo, não a falta de contexto.
+`cripto ##graf ##ar`. O idioma do modelo importa mais do que a arquitetura.
 
 **Claude (LLM).** É o único que funciona nos dois datasets:
 - Ele recebe em linguagem natural **o critério** do que é "similar" e a mesma escala dos anotadores. Os modelos de
@@ -88,11 +86,6 @@ resultado continuou em zero (−0,05): o problema é o modelo, não a falta de c
 - No dataset da aula é mais rigoroso que os humanos: deu 0,5 para versionar–comitar e memória–armazenamento, que os
   humanos avaliaram com 1.
 - Mesmo sendo o melhor, fica longe da concordância humana nesse dataset (0,48 contra 0,76).
-
-**Estabilidade do LLM.** Antes da rodada final houve uma rodada preliminar com outro modelo da mesma família (Claude
-Sonnet 5.5, em conversa, também às cegas) no nosso dataset. As notas das duas rodadas têm Spearman 0,72 entre si: 71%
-são idênticas e nenhuma difere em mais de 1 ponto. A correlação com os humanos também foi parecida (0,55 contra 0,53).
-O resultado do LLM não depende de uma rodada específica.
 
 ## Conclusão
 
@@ -110,22 +103,5 @@ no dataset da aula. O LLM consegue fazer isso porque recebe o critério da anota
 - **Empates.** As notas do Claude e dos humanos são discretas (70 dos 100 pares do nosso dataset receberam 1 do
   Claude), o que limita o Spearman.
 - **Reprodutibilidade do LLM.** As notas vieram de sessões de conversa, registradas em `topico_4/claude/`, e não de
-  uma chamada por script. A rodada preliminar mostra que mudam pouco, mas podem mudar.
+  uma chamada por script. Podem mudar de uma sessão para outra.
 - **Gemini.** Também foi testado pela API gratuita, mas respondeu 503 (sobrecarregado) e ficou fora da comparação.
-
-## Rodada preliminar
-
-Antes do notebook do `topico_4`, `avaliar_modelos.py` avaliou só o nosso dataset. Os resultados estão em
-[`ANALISE_MODELOS.md`](ANALISE_MODELOS.md) e as previsões em `resultados/`. Diferenças em relação à rodada final:
-- BERT com a média das 4 últimas camadas, com a palavra isolada e em contexto;
-- LLM Claude Sonnet 5.5 ([`resultados/LLM_CLAUDE.md`](resultados/LLM_CLAUDE.md));
-- sem o BERTimbau e sem o dataset da aula.
-
-Os números batem com a rodada final:
-
-| modelo | Spearman (preliminar) | IC 95% |
-|---|--:|---|
-| Claude Sonnet 5.5 | 0,545 | [0,38; 0,70] |
-| spaCy | 0,173 | [0,01; 0,35] |
-| `bert-base-uncased` (contexto) | −0,051 | [−0,26; 0,15] |
-| `bert-base-uncased` (isolada) | −0,036 | [−0,23; 0,15] |

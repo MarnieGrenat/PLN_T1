@@ -10,12 +10,11 @@ Declaração do uso de IA no Trabalho 1, como pede o enunciado. Agentes de Intel
 
 | ferramenta | uso | onde está registrado |
 |---|---|---|
-| Claude Opus 5.5 (Anthropic) | **rodada final**: deu as notas de similaridade aos 100 pares do nosso dataset e aos 80 do dataset da aula | [`similaridade/topico_4/claude/`](similaridade/topico_4/claude/) |
-| Claude Sonnet 5.5 (Anthropic) | **rodada preliminar**: deu as notas aos 100 pares do nosso dataset | [`similaridade/resultados/LLM_CLAUDE.md`](similaridade/resultados/LLM_CLAUDE.md) |
+| Claude Opus 5.5 (Anthropic) | deu as notas de similaridade aos 100 pares do nosso dataset e aos 80 do dataset da aula | [`similaridade/topico_4/claude/`](similaridade/topico_4/claude/) |
 | Gemini (Google AI Studio, API gratuita) | tentativa de um segundo LLM. A API respondeu 503 (sobrecarregada), e o Gemini ficou fora da comparação | seção 3.2 do notebook `similaridade/topico_4/similaridade_modelos.ipynb` |
 
 Para que a comparação com os humanos fosse válida, o LLM anotou **às cegas**:
-- Na rodada final, uma sessão separada do Claude recebeu o prompt de
+- Uma sessão separada do Claude recebeu o prompt de
   [`PROMPT.md`](similaridade/topico_4/claude/PROMPT.md).
 - Essa sessão só podia ler os arquivos de entrada, que têm apenas os pares, sem as notas humanas.
 - As instruções e as escalas eram as mesmas dadas aos anotadores.
@@ -34,7 +33,7 @@ Usamos o **Claude Code** (assistente de programação da Anthropic), com os mode
 | Corpus de questões (item 1) | código de processamento do texto (`scraper/processar_dataset.py`) e das estatísticas (`scraper/estatisticas_dataset.py`), *dataset card* (`dataset/README.md`) e `ESTATISTICAS.md`. |
 | Corpus de similaridade (item 2) | scripts de construção dos pares (`construir_pares.py`) e de concordância (`avaliar_concordancia.py`), `CONCORDANCIA.md` e *dataset card*                                                                                                |
 | Classificação (item 3) | reorganização do código em `preparar_dados.py` e `embeddings_bert.py`, notebook do Colab, geração dos resultados e documentação                                                                                                         |
-| Similaridade com modelos (item 4) | rodada preliminar (`avaliar_modelos.py`, `colab_modelos.ipynb`, `ANALISE_MODELOS.md`) e o texto de análise em `similaridade/COMPARACAO.md`                                                                                              |
+| Similaridade com modelos (item 4) | texto de análise em `similaridade/COMPARACAO.md`                                                                                              |
 | Documentação geral | Utilizado para sintetizar nossas ideias de forma profissional nos arquivos markdown                                                                                                                                                     |                                                                                               |
 
 O que **não** foi feito por IA:

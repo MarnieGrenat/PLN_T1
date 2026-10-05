@@ -18,9 +18,6 @@ Itens 2 e 4 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados
 | `similaridade_final.csv` | **resultado**: `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
 | `topico_4/` | **item 4**: notebook `similaridade_modelos.ipynb` (spaCy, BERTimbau, `bert-base-uncased` e Claude nos dois datasets), dataset da aula, notas do Claude (`claude/`) e tabela/gráficos de comparação |
 | `COMPARACAO.md` | **análise e comparação dos modelos (item 4b)** |
-| `avaliar_modelos.py`, `colab_modelos.ipynb` | rodada preliminar do item 4 (só o corpus próprio; BERT em contexto, Claude Sonnet 5.5) |
-| `resultados/` | previsões da rodada preliminar (`pred_*.csv`) e contextos do corpus (`contextos.json`) |
-| `ANALISE_MODELOS.md` | tabela de correlações da rodada preliminar (gerada por `avaliar_modelos.py`) |
 | `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
 | `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
 
@@ -70,16 +67,3 @@ uv add spacy transformers torch google-genai pandas scipy matplotlib
 ```
 
 Depois, abra o notebook no Jupyter ou no VS Code e rode as células em ordem (BERT fica mais rápido com GPU).
-
-### Rodada preliminar
-
-`avaliar_modelos.py` foi a primeira versão do item 4, só com o nosso dataset. Ela testa também o BERT com a palavra em
-até 20 contextos do corpus (média das 4 últimas camadas) e um LLM pela API da Anthropic ou um LLM aberto via Hugging
-Face. Os resultados estão em `ANALISE_MODELOS.md` e batem com os da rodada final.
-
-```bash
-python3 similaridade/avaliar_modelos.py --modelos contextos spacy        # local
-python3 similaridade/avaliar_modelos.py --modelos bert                   # melhor com GPU (veja colab_modelos.ipynb)
-ANTHROPIC_API_KEY=... python3 similaridade/avaliar_modelos.py --modelos llm --llm-backend anthropic
-python3 similaridade/avaliar_modelos.py --so-analise                     # só a tabela final
-```
