@@ -7,4 +7,22 @@ authors = [
     { name = "UNIXTCPIP", email = "ergoproxydns@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "pt-core-news-lg",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.18.1",
+    "spacy>=3.8.16",
+]
+
+[project.optional-dependencies]
+bert = [
+    "accelerate>=1.15.0",
+    "torch>=2.14.1",
+    "transformers>=5.18.0",
+]
+
+[tool.uv.sources]
+pt-core-news-lg = { url = "https://github.com/explosion/spacy-models/releases/download/pt_core_news_lg-3.8.0/pt_core_news_lg-3.8.0-py3-none-any.whl" }

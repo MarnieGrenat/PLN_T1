@@ -5,10 +5,13 @@ Classifica as questões do corpus em **redes**, **seguranca** ou **sistemas**, c
 ## Como rodar
 
 ```
-uv add scikit-learn matplotlib spacy transformers torch pandas
-uv pip install https://github.com/explosion/spacy-models/releases/download/pt_core_news_lg-3.8.0/pt_core_news_lg-3.8.0-py3-none-any.whl
+uv sync                                    # instala as dependências do pyproject.toml (inclui o modelo pt_core_news_lg)
 uv run python classificacao/classificar.py
 ```
+
+O `uv sync` não instala `torch`/`transformers` (extra `bert`): eles só são necessários para **gerar** os embeddings de BERT,
+e isso é feito no Colab (veja abaixo). Com os embeddings em `classificacao/cache/`, o script roda sem eles.
+Para gerar localmente: `uv sync --extra bert`.
 
 Os embeddings do BERT ficam salvos em `classificacao/cache/` (fora do git) para as próximas execuções serem rápidas.
 O nome do arquivo inclui um hash dos textos: se o dataset mudar, o cache antigo não é reaproveitado.
@@ -36,6 +39,13 @@ esses itens não se distribuem igualmente entre elas.
 
 ## Resultados
 
+Conjunto de teste de 300 questões (20% de 1500; 3 classes, então o acaso fica em 0,33):
+
+| representação | acurácia | F1 macro | F1 na validação cruzada (desvio) |
+|---|--:|--:|--:|
+| BERT neuralmind/bert-base-portuguese-cased | 0.657 | 0.656 | 0.647 (0.024) |
+| TF-IDF | 0.617 | 0.617 | 0.636 (0.018) |
+| spaCy | 0.593 | 0.593 | 0.602 (0.024) |
+| BERT bert-base-uncased | 0.580 | 0.579 | 0.609 (0.014) |
+
 Ficam em `classificacao/resultados/`: tabela e gráfico de comparação (`comparacao.csv`, `comparacao.png`), matrizes de confusão, questões erradas por modelo, curva do F1 pelo tamanho da BoW e as palavras mais importantes de cada subárea no TF-IDF.
-
-

@@ -62,28 +62,30 @@ e a média das duas. *Dataset card*: [`similaridade/DATASET_CARD.md`](similarida
 
 ## Como executar
 
-Pré-requisitos: Python 3, `poppler-utils` (`pdftotext`) e, para o item 2, spaCy com o modelo
-português grande.
+Pré-requisitos: [`uv`](https://docs.astral.sh/uv/) (Python 3.14) e `poppler-utils` (`pdftotext`, só para refazer a
+extração do texto). Instale as dependências (inclui spaCy e o modelo `pt_core_news_lg`):
 
 ```bash
-pip install spacy
-python3 -m spacy download pt_core_news_lg
+uv sync
 ```
 
 Os comandos abaixo rodam a partir da raiz do repositório:
 
 ```bash
 # reconstrói as questões a partir de dataset/raw.zip
-python3 scraper/processar_dataset.py
+uv run python scraper/processar_dataset.py
 
 # estatísticas do corpus
-python3 scraper/estatisticas_dataset.py
+uv run python scraper/estatisticas_dataset.py
 
 # palavras e pares para anotação de similaridade
-python3 similaridade/construir_pares.py
+uv run python similaridade/construir_pares.py
 
 # une as anotações, calcula a concordância e gera o CSV final
-python3 similaridade/avaliar_concordancia.py
+uv run python similaridade/avaliar_concordancia.py
+
+# classificação das questões por subárea (item 3; veja classificacao/README.md)
+uv run python classificacao/classificar.py
 ```
 
 Os scripts são determinísticos: rodar de novo reproduz os mesmos arquivos. Atenção: rodar

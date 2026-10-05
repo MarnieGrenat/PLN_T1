@@ -223,3 +223,5 @@ scraper/dados/pdfs/
 
 # embeddings de BERT (gerados no Colab/localmente; pesados)
 classificacao/cache/
+cache_embeddings.zip
+resultados.zip
