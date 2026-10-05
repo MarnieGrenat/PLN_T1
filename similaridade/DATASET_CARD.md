@@ -49,7 +49,9 @@ A ordem das palavras dentro do par não tem significado (a similaridade é trata
 
 ## Como foi construído
 
-1. **Texto de origem**: enunciados e alternativas das 274 questões de `dataset/questoes.jsonl`.
+1. **Texto de origem**: enunciados e alternativas das 274 questões da primeira versão de
+   `dataset/questoes.jsonl`. O corpus de questões foi ampliado depois (veja `dataset/README.md`); as
+   palavras e os pares **não foram regerados**, para não invalidar as anotações já feitas.
 2. **Pré-processamento** (spaCy `pt_core_news_lg`): tokenização, lematização e remoção de stopwords.
    Ficam só substantivos, verbos e adjetivos, com lema alfabético de 3 letras ou mais, sem numerais
    romanos, nomes próprios/siglas, nem vocabulário de enunciado de prova ("assinalar", "alternativa").

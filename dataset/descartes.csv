@@ -1,5 +1,7 @@
 prova,numero,motivo
 administrador-de-rede-e-seguranca-da-informacao-prefeitura-inhumas-go-instituto-verbena-ufg-2024,48,depende de figura/imagem
+administrador-de-redes-tecnico-em-informatica-camara-de-monte-santo-de-minas-mg-instituto-evo-2024,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+administrador-redes-crm-rr-quadrix-2024,,seção de conhecimentos específicos não encontrada
 agente-de-tecnologia-da-informacao-e-comunicacao-analista-de-sistemas-epagri-fepese-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 agente-especializado-analista-de-seguranca-da-informacao-mp-es-fgv-2026,23,alternativas não encontradas
 agente-especializado-analista-de-seguranca-da-informacao-mp-es-fgv-2026,50,alternativas não encontradas
@@ -7,6 +9,8 @@ agente-especializado-analista-de-sistemas-mp-es-fgv-2026,26,alternativas não en
 agente-especializado-analista-de-sistemas-mp-es-fgv-2026,36,depende de figura/imagem
 agente-especializado-analista-de-sistemas-mp-es-fgv-2026,47,alternativas não encontradas
 agente-nivel-superior-analista-de-sistemas-crea-sc-ieses-2022,,seção de conhecimentos específicos não encontrada
+agente-tecnico-desenvolvedor-mp-es-fgv-2026,,fora do escopo (subárea/ano não identificados)
+agente-tecnico-operador-de-redes-e-telecomunicacoes-mp-es-fgv-2026,32,duplicada
 analise-de-sistema-seguranca-cibernetica-e-da-informacao-transpetro-cesgranrio-2023,21,duplicada
 analise-de-sistema-seguranca-cibernetica-e-da-informacao-transpetro-cesgranrio-2023,22,duplicada
 analise-de-sistema-seguranca-cibernetica-e-da-informacao-transpetro-cesgranrio-2023,23,alternativas não encontradas
@@ -41,114 +45,669 @@ analista-administrativo-analista-de-desenvolvimento-de-sistemas-prodam-am-quadri
 analista-administrativo-analista-de-sistemas-camara-de-anapolis-go-instituto-verbena-ufg-2024,44,depende de figura/imagem
 analista-administrativo-analista-de-sistemas-camara-de-anapolis-go-instituto-verbena-ufg-2024,49,depende de figura/imagem
 analista-administrativo-analista-de-sistemas-camara-de-anapolis-go-instituto-verbena-ufg-2024,57,alternativa vazia
-analista-analista-de-sistemas-dpe-mt-ibfc-2022,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-administrativo-tecnologia-da-informacao-com-especialidade-em-desenvolvimento-de-sistemas-tce-rr-fvg-2025,,não foi possível separar as questões
+analista-analise-de-sistemas-ciberseguranca-manha-bndes-cesgranrio-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-analise-de-sistemas-ciberseguranca-tarde-bndes-cesgranrio-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-analista-de-sistemas-dpe-mt-ibfc-2022,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
 analista-area-ciencias-agrarias-subarea-sistemas-de-producao-animal-embrapa-cebraspe-2025,,fora do escopo (subárea/ano não identificados)
 analista-area-ciencias-agrarias-subarea-sistemas-de-producao-vegetal-embrapa-cebraspe-2025,,fora do escopo (subárea/ano não identificados)
-analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,76,depende de figura/imagem
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,91,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,92,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,93,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,94,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,95,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,96,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,97,questão sem resposta no gabarito
+analista-area-ciencias-exatas-e-da-terra-subarea-sistemas-de-informacao-embrapa-cebraspe-2025,98,questão sem resposta no gabarito
 analista-area-de-apoio-especializado-tecnologia-da-informacao-desenvolvimento-de-sistemas-dpe-rs-fgv-2023,69,depende de figura/imagem
 analista-area-de-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-dpe-rs-fgv-2023,41,duplicada
 analista-area-de-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-dpe-rs-fgv-2023,42,duplicada
 analista-area-de-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-dpe-rs-fgv-2023,44,duplicada
 analista-area-de-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-dpe-rs-fgv-2023,45,duplicada
 analista-area-de-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-dpe-rs-fgv-2023,57,questão anulada
-analista-da-tecnologia-da-informacao-area-infraestrutura-e-seguranca-ifpe-funcern-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-manha-cvm-fgv-2024,,seção de conhecimentos específicos não encontrada
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,41,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,42,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,43,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,44,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,45,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,46,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,47,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,48,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,49,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,50,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,51,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,52,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,53,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,54,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,55,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,56,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,57,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,58,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,59,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,60,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,61,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,62,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,63,questão sem resposta no gabarito
+analista-cvm-perfil-9-ti-infraestrutura-e-seguranca-tarde-cvm-fgv-2024,64,questão sem resposta no gabarito
+analista-de-desenvolvimento-de-sistemas-amazul-fgv-conhecimento-2025,,seção de conhecimentos específicos não encontrada
+analista-de-desenvolvimento-de-sistemas-amazul-fundacao-getulio-vargas-fgv-2025,,seção de conhecimentos específicos não encontrada
+analista-de-desenvolvimento-de-sistemas-cra-mg-fumarc-2026,39,depende de figura/imagem
+analista-de-desenvolvimento-sistemas-facape-facape-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 analista-de-gestao-corporativa-tecnologia-da-informacao-infraestrutura-e-seguranca-epe-fgv-2024,43,depende de figura/imagem
 analista-de-gestao-corporativa-tecnologia-da-informacao-infraestrutura-e-seguranca-epe-fgv-2024,44,alternativas não encontradas
 analista-de-gestao-corporativa-tecnologia-da-informacao-infraestrutura-e-seguranca-epe-fgv-2024,52,alternativas não encontradas
 analista-de-gestao-sistemas-e-seguranca-da-informacao-companhia-aguas-de-joinville-sc-fepese-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-planejamento-gestao-e-infraestrutura-em-propriedade-industrial-seguranca-da-informacao-inpi-cebraspe-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,21,depende de figura/imagem
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,23,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,25,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,26,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,27,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,28,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,29,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,30,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,31,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,32,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,33,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,34,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,36,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,37,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,38,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,39,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,40,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,41,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,42,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,43,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,45,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,46,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,48,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,49,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,52,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,53,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,55,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,56,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,57,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,58,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,59,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,60,questão sem resposta no gabarito
+analista-de-infraestrutura-de-tecnologia-da-informacao-amazul-fgv-conhecimento-2025,,seção de conhecimentos específicos não encontrada
+analista-de-infraestrutura-de-tecnologia-da-informacao-amazul-fundacao-getulio-vargas-fgv-2025,,seção de conhecimentos específicos não encontrada
+analista-de-infraestrutura-de-tecnologia-da-informacao-cau-br-cebraspe-2024,69,depende de figura/imagem
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,16,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,17,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,18,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,19,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,20,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,21,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,22,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,23,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,24,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,26,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,30,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,31,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,32,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,33,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,35,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,36,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,37,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,38,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,39,fora do domínio (orçamento público)
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,56,depende de figura/imagem
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,75,questão anulada
+analista-de-planejamento-e-orcamento-especialidade-gestao-de-infraestrutura-de-ti-mpo-cebraspe-2024,100,fora do domínio (orçamento público)
+analista-de-previdencia-complementar-area-10-infraestrutura-e-ciberseguranca-funpresp-exe-cebraspe-2025,116,questão sem resposta no gabarito
+analista-de-previdencia-complementar-area-10-infraestrutura-e-ciberseguranca-funpresp-exe-cebraspe-2025,117,questão sem resposta no gabarito
+analista-de-previdencia-complementar-area-10-infraestrutura-e-ciberseguranca-funpresp-exe-cebraspe-2025,118,questão sem resposta no gabarito
+analista-de-previdencia-complementar-area-10-infraestrutura-e-ciberseguranca-funpresp-exe-cebraspe-2025,119,questão sem resposta no gabarito
+analista-de-previdencia-complementar-area-10-infraestrutura-e-ciberseguranca-funpresp-exe-cebraspe-2025,120,questão sem resposta no gabarito
+analista-de-previdencia-complementar-area-9-sistemas-e-governanca-de-tecnologia-da-informacao-funpresp-exe-cebraspe-2025,56,fora do domínio (orçamento público)
+analista-de-previdencia-complementar-area-9-sistemas-e-governanca-de-tecnologia-da-informacao-funpresp-exe-cebraspe-2025,65,questão anulada
+analista-de-previdencia-complementar-area-9-sistemas-e-governanca-de-tecnologia-da-informacao-funpresp-exe-cebraspe-2025,76,questão anulada
+analista-de-redes-camara-de-manaus-am-instituto-acesso-2024,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-seguranca-da-informacao-camara-de-manaus-am-instituto-acesso-2024,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
 analista-de-seguranca-da-informacao-coren-sc-fepese-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,23,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,25,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,26,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,27,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,28,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,29,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,30,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,31,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,32,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,33,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,34,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,36,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,37,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,38,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,39,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,40,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,41,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,42,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,43,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,45,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,46,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,48,questão sem resposta no gabarito
-analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,49,questão sem resposta no gabarito
-analista-de-seguranca-da-tecnologia-da-informacao-banrisul-cebraspe-2022,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-seguranca-da-informacao-judiciario-tjm-sp-vunesp-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-sistema-prefeitura-pao-de-acucar-al-igeduc-2026,,fora do escopo (subárea/ano não identificados)
+analista-de-sistemas-administracao-de-banco-de-dados-brde-fundatec-2025,54,questão anulada
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,21,questão sem resposta no gabarito
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,22,questão sem resposta no gabarito
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,23,questão sem resposta no gabarito
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,24,questão sem resposta no gabarito
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,25,questão sem resposta no gabarito
+analista-de-sistemas-cam-goiania-go-instituto-verbena-2026,39,depende de figura/imagem
+analista-de-sistemas-cfbio-quadrix-2025,,seção de conhecimentos específicos não encontrada
+analista-de-sistemas-ciencia-de-dados-brde-fundatec-2025,54,questão anulada
+analista-de-sistemas-ciga-sc-legalle-concursos-2026,,seção de conhecimentos específicos não encontrada
+analista-de-sistemas-classe-b-dpe-ro-fgv-2025,44,depende de figura/imagem
+analista-de-sistemas-classe-b-dpe-ro-fgv-2025,50,alternativas não encontradas
+analista-de-sistemas-cref2-fundatec-2025,46,depende de figura/imagem
+analista-de-sistemas-cref2-rs-fundatec-2025,26,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,27,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,28,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,29,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,30,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,31,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,32,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,33,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,34,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,35,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,36,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,37,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,38,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,39,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,40,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,41,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,42,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,43,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,44,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,45,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,46,depende de figura/imagem
+analista-de-sistemas-cref2-rs-fundatec-2025,47,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,48,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,49,duplicada
+analista-de-sistemas-cref2-rs-fundatec-2025,50,duplicada
+analista-de-sistemas-desenvolvimento-de-sistemas-brde-fundatec-2025,41,depende de figura/imagem
+analista-de-sistemas-desenvolvimento-de-sistemas-brde-fundatec-2025,54,questão anulada
+analista-de-sistemas-fapesp-vunesp-2026,32,alternativas não encontradas
+analista-de-sistemas-ghc-fundatec-2025-24,26,depende de figura/imagem
+analista-de-sistemas-ghc-fundatec-2025,21,duplicada
+analista-de-sistemas-ghc-fundatec-2025,22,duplicada
+analista-de-sistemas-ghc-fundatec-2025,23,duplicada
+analista-de-sistemas-ghc-fundatec-2025,24,duplicada
+analista-de-sistemas-ghc-fundatec-2025,25,duplicada
+analista-de-sistemas-ghc-fundatec-2025,26,depende de figura/imagem
+analista-de-sistemas-ghc-fundatec-2025,27,duplicada
+analista-de-sistemas-ghc-fundatec-2025,28,duplicada
+analista-de-sistemas-ghc-fundatec-2025,29,duplicada
+analista-de-sistemas-ghc-fundatec-2025,30,duplicada
+analista-de-sistemas-ghc-fundatec-2025,31,duplicada
+analista-de-sistemas-ghc-fundatec-2025,32,duplicada
+analista-de-sistemas-ghc-fundatec-2025,33,duplicada
+analista-de-sistemas-ghc-fundatec-2025,34,duplicada
+analista-de-sistemas-ghc-fundatec-2025,35,duplicada
+analista-de-sistemas-ghc-fundatec-2025,36,duplicada
+analista-de-sistemas-ghc-fundatec-2025,37,duplicada
+analista-de-sistemas-ghc-fundatec-2025,38,duplicada
+analista-de-sistemas-ghc-fundatec-2025,39,duplicada
+analista-de-sistemas-ghc-fundatec-2025,40,duplicada
+analista-de-sistemas-ghc-fundatec-2025,41,duplicada
+analista-de-sistemas-ghc-fundatec-2025,42,duplicada
+analista-de-sistemas-ghc-fundatec-2025,43,duplicada
+analista-de-sistemas-ghc-fundatec-2025,44,duplicada
+analista-de-sistemas-ghc-fundatec-2025,45,duplicada
+analista-de-sistemas-ghc-fundatec-2025,46,duplicada
+analista-de-sistemas-ghc-fundatec-2025,47,duplicada
+analista-de-sistemas-ghc-fundatec-2025,48,duplicada
+analista-de-sistemas-ghc-fundatec-2025,49,duplicada
+analista-de-sistemas-ghc-fundatec-2025,50,duplicada
+analista-de-sistemas-prefeitura-alto-bela-vista-sc-amauc-2025,,não foi possível separar as questões
+analista-de-sistemas-prefeitura-camboriu-sc-furb-2025,39,alternativas não encontradas
+analista-de-sistemas-prefeitura-castelo-es-ibade-2025,45,depende de figura/imagem
+analista-de-sistemas-prefeitura-clevelandia-pr-prefeitura-clevelandia-pr-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-sistemas-prefeitura-contagem-mg-access-2026,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-sistemas-prefeitura-de-ita-sc-amauc-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-sistemas-prefeitura-de-juruti-pa-instituto-de-desenvolvimento-social-agata-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-sistemas-prefeitura-lajeado-rs-fundatec-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-sistemas-prefeitura-rolim-de-moura-ro-ibade-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-sistemas-prefeitura-tangara-da-serra-mt-fundatec-2025,41,questão sem resposta no gabarito
+analista-de-sistemas-sms-prefeitura-mineiros-go-unifimes-2025,34,questão anulada
+analista-de-sistemas-suporte-brde-fundatec-2025,41,depende de figura/imagem
+analista-de-sistemas-suporte-brde-fundatec-2025,54,questão anulada
+analista-de-sistemas-tj-sc-fgv-2026,68,alternativas não encontradas
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,21,questão sem resposta no gabarito
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,22,questão sem resposta no gabarito
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,23,questão sem resposta no gabarito
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,24,questão sem resposta no gabarito
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,25,questão sem resposta no gabarito
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,26,duplicada
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,27,duplicada
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,28,duplicada
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,29,duplicada
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,30,duplicada
+analista-de-suporte-de-redes-e-sistemas-cam-goiania-go-instituto-verbena-2026,41,questão anulada
 analista-de-suporte-especializacao-em-seguranca-da-informacao-prefeitura-rio-branco-ac-instituto-verbena-2024,34,alternativas não encontradas
-analista-de-tecnologia-da-informacao-area-infraestrutura-de-ti-e-redes-de-computadores-ufc-fcpc-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-tecnologia-da-informacao-area-seguranca-da-informacao-ufc-fcpc-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-tecnologia-da-informacao-area-engenharia-de-rede-furg-progep-2024,,sem prova ou sem gabarito
+analista-de-tecnologia-da-informacao-area-infraestrutura-de-ti-e-redes-de-computadores-ufc-fcpc-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-tecnologia-da-informacao-area-infraestrutura-e-redes-ifmg-ifmg-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-tecnologia-da-informacao-area-seguranca-da-informacao-ufc-fcpc-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-tecnologia-da-informacao-e-comunicacao-redes-e-telecomunicacoes-cidasc-fepese-2026,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-tecnologia-da-informacao-e-comunicacao-sistemas-e-negocios-cidasc-fepese-2026,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,111,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,112,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,113,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,114,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,115,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,116,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,117,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,118,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,119,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024-24,120,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,51,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,52,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,53,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,54,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,55,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,56,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,57,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,58,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,59,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,60,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,61,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,62,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,63,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,64,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,65,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,66,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,67,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,68,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,69,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,70,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,71,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,72,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,73,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,74,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,75,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,76,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,77,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,78,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,79,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,80,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,81,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,82,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,83,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,84,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,85,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,86,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,87,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,88,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,89,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,90,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,91,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,92,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,93,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,94,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,95,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,96,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,97,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,98,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,99,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,100,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,101,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,102,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,103,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,104,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,105,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,106,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,107,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,108,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,109,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,110,duplicada
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,111,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,112,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,113,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,114,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,115,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,116,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,117,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,118,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,119,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-infraestrutura-de-ti-tce-ac-cebraspe-2024,120,questão sem resposta no gabarito
 analista-de-tecnologia-da-informacao-infraestrutura-em-seguranca-da-informacao-redes-e-datacenter-ufgd-fapec-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-tecnologia-da-informacao-perfil-seguranca-cibernetica-dataprev-cebraspe-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,46,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,47,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,48,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,49,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,50,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,51,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,52,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,53,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,54,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,55,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,56,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,57,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,58,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,59,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,60,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,61,questão sem resposta no gabarito
-analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,91,depende de figura/imagem
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,99,depende de figura/imagem
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,100,depende de figura/imagem
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,111,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,112,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,113,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,114,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,115,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,116,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,117,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,118,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,119,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-perfil-seguranca-da-informacao-e-protecao-de-dados-dataprev-cebraspe-2023,120,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-cibernetica-e-protecao-de-dados-dataprev-fgv-2024,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,51,questão anulada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,91,muitos caracteres estranhos
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,111,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,112,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,113,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,114,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,115,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,116,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,117,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,118,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,119,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024-62,120,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,51,questão anulada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,52,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,53,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,54,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,55,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,56,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,57,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,58,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,59,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,60,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,61,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,62,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,63,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,64,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,65,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,66,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,67,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,68,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,69,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,70,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,71,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,72,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,73,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,74,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,75,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,76,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,77,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,78,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,79,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,80,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,81,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,82,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,83,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,84,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,85,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,86,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,87,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,88,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,89,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,90,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,91,muitos caracteres estranhos
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,92,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,93,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,94,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,95,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,96,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,97,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,98,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,99,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,100,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,101,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,102,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,103,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,104,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,105,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,106,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,107,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,108,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,109,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,110,duplicada
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,111,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,112,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,113,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,114,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,115,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,116,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,117,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,118,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,119,questão sem resposta no gabarito
+analista-de-tecnologia-da-informacao-seguranca-da-informacao-tce-ac-cebraspe-2024,120,questão sem resposta no gabarito
 analista-de-tecnologia-da-informacao-seguranca-da-informacao-ufrn-comperve-2022-98,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 analista-de-tecnologia-da-informacao-seguranca-da-informacao-ufrn-comperve-2022,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 analista-de-tecnologia-da-informacao-seguranca-e-operacoes-ufms-fapec-2022,,seção de conhecimentos específicos não encontrada
 analista-de-tecnologia-da-informacao-seguranca-ufrj-ufrj-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-analista-de-ti-seguranca-da-informacao-ufsm-ufsm-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-de-ti-infraestrutura-de-tecnologia-de-informacao-ifs-instituto-verbena-ufg-2024,31,depende de figura/imagem
+analista-de-ti-seguranca-da-informacao-ufsm-ufsm-2025,,seção de conhecimentos específicos não encontrada
+analista-em-ciencia-e-tecnologia-pleno-i-especialidade-infraestrutura-de-tecnologia-da-informacao-cnpq-cebraspe-2024,58,questão anulada
+analista-em-ciencia-e-tecnologia-pleno-i-especialidade-infraestrutura-de-tecnologia-da-informacao-cnpq-cebraspe-2024,64,fora do domínio (orçamento público)
+analista-em-computacao-enfase-em-seguranca-da-informacao-procergs-fundatec-2025,27,questão anulada
+analista-em-computacao-enfase-em-seguranca-da-informacao-procergs-fundatec-2025,40,depende de figura/imagem
+analista-em-computacao-enfase-em-seguranca-da-informacao-procergs-fundatec-2025,43,depende de figura/imagem
+analista-em-tecnologia-da-informacao-seguranca-da-informacao-banestes-fgv-2021,39,alternativas não encontradas
+analista-em-tecnologia-da-informacao-seguranca-da-informacao-banestes-fgv-2021,47,depende de figura/imagem
+analista-ii-infraestrutura-computacional-cra-sp-instituto-quadrix-2025,,seção de conhecimentos específicos não encontrada
+analista-ii-infraestrutura-computacional-cra-sp-quadrix-2025,,seção de conhecimentos específicos não encontrada
+analista-judiciario-analise-de-sistemas-seguranca-da-informacao-tj-se-fgv-2023,45,alternativas não encontradas
 analista-judiciario-analista-de-redes-de-computadores-poder-judiciario-ac-ivin-2024,58,depende de figura/imagem
+analista-judiciario-analista-de-sistemas-seguranca-da-informacao-tj-ma-instituto-consulplan-2024,,não foi possível separar as questões
+analista-judiciario-analista-de-sistemas-suporte-de-rede-tj-ma-instituto-consulplan-2024,,não foi possível separar as questões
+analista-judiciario-apoio-especializado-tecnologia-da-informacao-seguranca-da-informacao-tj-ap-fgv-2023,58,alternativas não encontradas
+analista-judiciario-area-de-apoio-especializado-seguranca-da-informacao-trf-da-5-regiao-ibfc-2024,,não foi possível separar as questões
+analista-judiciario-ciberseguranca-tj-rr-fgv-2024,43,depende de figura/imagem
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,21,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,22,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,23,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,24,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,25,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,26,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,27,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,28,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,29,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,30,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,31,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,32,questão anulada
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,33,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,34,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,35,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,36,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,37,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,38,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,39,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,40,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,41,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,42,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,43,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,44,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,45,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,46,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,47,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,48,alternativas não encontradas
+analista-judiciario-grupo-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rj-cebraspe-2021,49,alternativas não encontradas
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,32,duplicada
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,33,duplicada
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,34,duplicada
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,35,duplicada
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,36,duplicada
+analista-judiciario-infraestrutura-de-tecnologia-da-informacao-tj-rr-fgv-2024,55,alternativas não encontradas
+analista-judiciario-seguranca-da-informacao-tj-dft-fgv-2022,43,resposta fora das alternativas
+analista-judiciario-seguranca-da-informacao-tj-dft-fgv-2022,48,alternativas não encontradas
+analista-judiciario-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rs-fgv-concursos-2025,62,depende de figura/imagem
+analista-judiciario-tecnologia-da-informacao-analista-de-seguranca-da-informacao-tj-rs-fgv-concursos-2025,64,alternativas não encontradas
+analista-legislativo-analista-de-sistemas-alego-fgv-2026,,não foi possível separar as questões
+analista-legislativo-desenvolvedor-de-sistemas-alego-fgv-2026,,não foi possível separar as questões
 analista-producao-redes-suporte-de-banco-de-dados-e-suporte-de-sistemas-correios-ibfc-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+analista-tecnico-seguranca-da-informacao-emgepron-selecon-2021,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,1,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,2,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,3,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,4,depende de figura/imagem
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,5,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,6,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,7,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,8,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,9,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,10,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,11,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,12,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,13,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,14,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,15,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,16,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,17,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,18,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,19,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,20,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,21,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,22,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,23,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,24,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,25,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,26,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,27,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,28,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,29,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,30,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,31,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,32,alternativas não encontradas
+assistente-de-informatca-ii-redes-infraestrutura-e-suporte-de-usuario-unesp-sao-jose-dos-campos-sp-vunesp-2024,33,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,31,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,32,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,33,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,34,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,35,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,36,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,37,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,38,alternativas não encontradas
+consultor-tecnico-legislativo-analista-de-infraestrutura-de-tecnologia-camara-de-betim-mg-fundep-2024,39,alternativas não encontradas
+enfase-2-infraestrutura-e-seguranca-cibernetica-bdmg-cebraspe-2025,,gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)
+engenheiro-da-computacao-seguranca-da-informacao-prefeitura-santana-de-parnaiba-sp-instituto-mais-2022-22,25,enunciado muito curto
+engenheiro-da-computacao-seguranca-da-informacao-prefeitura-santana-de-parnaiba-sp-instituto-mais-2022-22,30,alternativas não encontradas
+engenheiro-da-computacao-seguranca-da-informacao-prefeitura-santana-de-parnaiba-sp-instituto-mais-2022,31,alternativas não encontradas
+especialidade-tecnologia-da-informacao-orientacao-microinformatica-e-infraestrutura-de-ti-tc-df-cebraspe-2024,,seção de conhecimentos específicos não encontrada
+especialista-em-previdencia-analise-de-sistemas-ipe-prev-rs-fundatec-2026,42,depende de figura/imagem
+especialista-em-previdencia-analise-de-sistemas-ipe-prev-rs-fundatec-2026,44,depende de figura/imagem
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,67,questão anulada
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,76,questão anulada
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,103,depende de figura/imagem
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,111,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,112,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,113,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,114,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,115,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,116,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,117,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,118,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,119,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-e-protecao-de-dados-ministerio-da-economia-cebraspe-2020,120,questão sem resposta no gabarito
+especialista-em-seguranca-da-informacao-prefeitura-balneario-camboriu-sc-fepese-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 estagiario-redes-de-computadores-prefeitura-eloi-mendes-mg-prefeitura-eloi-mendes-mg-2024,,seção de conhecimentos específicos não encontrada
 estagio-especificidade-tecnologia-em-redes-de-computadores-tre-rn-epl-concursos-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+informatica-engenharia-de-software-e-banco-de-dados-concordia-ifc-sc-fundatec-2026,,fora do escopo (subárea/ano não identificados)
+informatica-engenharia-de-software-e-banco-de-dados-sao-bento-do-sul-ifc-sc-fundatec-2026,,fora do escopo (subárea/ano não identificados)
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,21,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,22,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,23,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,24,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,25,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,26,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,27,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,28,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,29,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,30,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,31,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,32,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,33,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,34,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,35,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,36,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,37,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,38,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,39,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,40,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,41,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,42,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,43,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,44,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,45,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,46,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,47,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,48,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,49,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,50,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,51,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,52,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,53,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,54,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,55,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,56,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,57,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,58,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,59,duplicada
+informatica-hardware-e-redes-fraiburgo-ifc-sc-fundatec-2026,60,duplicada
+pebtt-redes-de-computadores-administracao-de-redes-arquitetura-de-computadores-sistemas-operacionais-seguranca-da-informacao-manutencao-de-hardware-if,,fora do escopo (subárea/ano não identificados)
 pebtt-redes-de-computadores-administracao-de-redes-arquitetura-de-computadores-sistemas-operacionais-seguranca-da-informacao-manutencao-de-hardware-ifrj-selecon-2022,,sem prova ou sem gabarito
-pebtt-redes-de-computadores-ifrj-selecon-2022,,sem prova ou sem gabarito
+pesquisador-em-propriedade-industrial-redes-de-comunicacao-sem-fio-sistemas-de-comunicacaoes-moveis-redes-de-comunicacao-digital-protocolos-de-comunic,,fora do escopo (subárea/ano não identificados)
+pesquisador-em-propriedade-industrial-redes-de-comunicacao-sem-fio-sistemas-de-comunicacaoes-moveis-redes-de-comunicacao-digital-protocolos-de-comunicacao-inpi-cebraspe-2024,,sem prova ou sem gabarito
 professor-ebtt-informatica-redes-de-computadores-e-sistema-distribuido-iffar-rs-fundatec-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
-professor-ebtt-redes-de-computadores-ifrn-funcern-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+professor-ebtt-redes-de-computadores-ifrn-funcern-2025,,seção de conhecimentos específicos não encontrada
+professor-ebtt-redes-ifpe-funcern-2025,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+professor-emi-tecnico-em-redes-de-computadores-centec-centec-2023-42,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+professor-emi-tecnico-em-redes-de-computadores-centec-centec-2023,,gabarito ambíguo (vários cargos/tipos) ou ilegível
 professor-emi-tecnico-em-redes-de-computadores-centec-centec-2025,,seção de conhecimentos específicos não encontrada
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,1,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,2,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,3,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,4,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,5,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,6,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,7,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,8,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,9,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,10,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,11,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,12,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,13,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,14,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,15,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,16,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,17,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,18,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,19,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,20,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,21,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,22,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,23,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,24,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,25,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,26,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,27,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,28,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,29,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,30,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,31,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,32,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,33,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,34,alternativas não encontradas
+suporte-de-redes-e-sistemas-hrtn-gestao-de-concursos-2024,35,alternativas não encontradas
+tecnico-de-laboratorio-area-redes-de-computadores-ifpe-funcern-2025,,sem prova ou sem gabarito
+tecnico-de-nivel-superior-analista-de-sistemas-computacionais-analista-de-infraestrutura-de-redes-tj-ms-fgv-2024,,não foi possível separar as questões
+tecnico-de-tecnologia-da-informacao-area-servicos-de-rede-furg-progep-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+tecnico-de-tecnologia-da-informacao-area-suporte-em-sistemas-e-redes-de-computadores-ufc-fcpc-2025,,seção de conhecimentos específicos não encontrada
+tecnico-de-tecnologia-da-informacao-seguranca-ufrj-ufrj-2023,,não foi possível separar as questões
+tecnico-de-ti-area-suporte-e-redes-ufrpe-progepe-ufpr-2024,26,depende de figura/imagem
+tecnico-de-ti-area-suporte-e-redes-ufrpe-progepe-ufpr-2024,63,alternativas não encontradas
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-administrador-de-banco-de-dados-badesul-legalle-concursos-2026,,seção de conhecimentos específicos não encontrada
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-analista-de-infraestrutura-badesul-legalle-concursos-2026,37,alternativas não encontradas
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-analista-de-infraestrutura-badesul-legalle-concursos-2026,39,depende de figura/imagem
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-analista-de-infraestrutura-badesul-legalle-concursos-2026,53,alternativas não encontradas
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-analista-de-negocios-badesul-legalle-concursos-2026,,seção de conhecimentos específicos não encontrada
+tecnico-em-desenvolvimento-analista-de-sistemas-enfase-em-analista-de-seguranca-da-informacao-badesul-legalle-concursos-2026,,sem prova ou sem gabarito
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,31,depende de figura/imagem
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,34,alternativa vazia
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,47,depende de figura/imagem
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,51,depende de figura/imagem
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,56,alternativas não encontradas
+tecnico-em-desenvolvimento-analista-de-sistemas-enfaseeem-arquiteto-de-software-badesul-legalle-concursos-2026,70,fora do domínio (orçamento público)
+tecnico-em-informatica-para-internet-ou-computacao-grafica-ou-tecnico-em-desenvolvimento-de-sistemas-prefeitura-itabirito-mg-fundatec-2026,,seção de conhecimentos específicos não encontrada
+tecnico-em-manutencao-de-computador-e-redes-prefeitura-capao-alto-sc-inaz-do-para-2024,,não foi possível separar as questões
+tecnico-em-pericias-curso-tecnico-em-redes-de-computadores-ou-tecnico-em-desenvolvimento-igp-rs-fundatec-2025,,seção de conhecimentos específicos não encontrada
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,31,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,32,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,33,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,34,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,35,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,36,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,37,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,38,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,39,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,40,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,41,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,42,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,43,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,44,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,45,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,46,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,47,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,48,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,49,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,50,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,51,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,52,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,53,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,54,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,55,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,56,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,57,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,58,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,59,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,60,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,61,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,62,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,63,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,64,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,65,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,66,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,67,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,68,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,69,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,70,alternativas não encontradas
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,71,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,72,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,73,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,74,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,75,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,76,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,77,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,78,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,79,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-ii-tecnologia-seguranca-infra-e-operacao-banrisul-cebraspe-2025,80,questão sem resposta no gabarito
+tecnico-em-tecnologia-da-informacao-infraestrutura-em-seguranca-da-informacao-redes-e-datacenter-ufgd-fapec-2024,,gabarito ambíguo (vários cargos/tipos) ou ilegível
+tecnologista-em-saude-publica-tecnologia-da-informacao-e-comunicacao-tic-com-foco-em-seguranca-da-informacao-fiocruz-fiocruz-2024,,seção de conhecimentos específicos não encontrada
+tecnologista-pleno-2-especialidade-t11-area-de-atuacao-infraestrutura-de-tecnologia-da-informacao-e-redes-de-computadores-inpa-cebraspe-2024,,seção de conhecimentos específicos não encontrada
+tecnologo-area-redes-de-computadores-ifes-ifes-2023,,seção de conhecimentos específicos não encontrada

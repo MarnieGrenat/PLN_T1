@@ -8,7 +8,7 @@ Cada questão traz enunciado, alternativas e gabarito, e está classificada por 
 
 ```
 dataset/
-├── raw.zip         96 .txt compactados (saída de `pdftotext -layout`): provas e gabaritos, um por PDF
+├── raw.zip         352 .txt compactados (saída de `pdftotext -layout`): provas e gabaritos, um por PDF
 ├── redes/          <ano>.jsonl
 ├── seguranca/      <ano>.jsonl
 ├── sistemas/       <ano>.jsonl
@@ -28,24 +28,34 @@ arquivos homônimos (`gabarito.txt`) de provas diferentes.
 | `ano`          | ano da prova                                                                |
 | `prova`        | identificador (slug) da prova no PCI Concursos                              |
 | `numero`       | número da questão na prova                                                  |
-| `tipo`         | `multipla_escolha` (hoje todas) ou `certo_errado`                           |
+| `tipo`         | `multipla_escolha` ou `certo_errado`                                        |
 | `enunciado`    | texto do enunciado, sem as alternativas                                     |
-| `alternativas` | objeto letra → texto (`{"A": "...", "B": "..."}`), 4 ou 5 alternativas      |
+| `alternativas` | objeto letra → texto (`{"A": "..."}`): 4 ou 5 alternativas; `{"C": "Certo", "E": "Errado"}` nos itens certo/errado |
 | `gabarito`     | letra da alternativa correta                                                |
 
 ## Estatísticas
 
-274 questões, vindas de 13 provas. Estatísticas completas do corpus (tokens, vocabulário, tamanho
+1987 questões, vindas de 78 provas. Estatísticas completas do corpus (tokens, vocabulário, tamanho
 dos textos, distribuição do gabarito, palavras mais frequentes e características por subárea) em
 [`ESTATISTICAS.md`](ESTATISTICAS.md), geradas por `scraper/estatisticas_dataset.py`.
 
-| subárea   | 2023 | 2024 | 2025 | 2026 | total | provas |
-|-----------|-----:|-----:|-----:|-----:|------:|-------:|
-| redes     |    – |   69 |    – |    – |    69 |      2 |
-| seguranca |   25 |   75 |    7 |   28 |   135 |      8 |
-| sistemas  |   28 |   17 |    – |   25 |    70 |      3 |
+| subárea   | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | total | provas |
+|-----------|--:|--:|--:|--:|--:|--:|--:|------:|-------:|
+| redes     | – | – | – | – | 424 | 90 | 155 | 669 | 24 |
+| seguranca | 57 | 23 | 51 | 151 | 275 | 169 | 28 | 754 | 29 |
+| sistemas  | – | – | – | 28 | 42 | 301 | 193 | 564 | 25 |
 
-140 questões têm 5 alternativas e 134 têm 4. Todas são de múltipla escolha.
+Por tipo de questão:
+
+| subárea   | múltipla escolha | certo/errado | total |
+|-----------|--:|--:|--:|
+| redes     | 488 | 181 | 669 |
+| seguranca | 490 | 264 | 754 |
+| sistemas  | 524 | 40 | 564 |
+
+1110 questões têm 5 alternativas, 392 têm 4 e 485 são de certo/errado (Cebraspe; as "alternativas" são
+`C` = Certo e `E` = Errado). Só com múltipla escolha, redes e seguranca ficam um pouco abaixo de 500; com
+certo/errado, as três subáreas passam de 500.
 
 ## Como foi construído
 
@@ -56,29 +66,36 @@ dos textos, distribuição do gabarito, palavras mais frequentes e característi
    - remove cabeçalhos, rodapés e marcas do site;
    - recorta a seção de conhecimentos específicos;
    - segmenta as questões e separa enunciado de alternativas;
-   - junta o gabarito pelo número da questão.
+   - junta o gabarito pelo número da questão. Em gabaritos com vários cargos, escolhe o bloco do cargo
+     da prova pelo nome (e pelo número do cargo, no Cebraspe); se não houver um único melhor, descarta.
 
 Para regenerar: `python3 scraper/processar_dataset.py` (lê `dataset/raw.zip`, grava em `dataset/`).
 
 ## Filtros (ver `descartes.csv`)
 
-Descartadas: caracteres corrompidos pela conversão, questões sem alternativas identificáveis, sem
+Descartadas: gabarito que não corresponde à prova (cobertura < 60% dos números de questão ou uma letra
+dominando > 70% das respostas), conteúdo fora do domínio (orçamento público, que vem junto da parte
+específica de alguns concursos), caracteres corrompidos pela conversão, questões sem alternativas identificáveis, sem
 resposta no gabarito, anuladas, duplicadas, enunciados muito curtos e questões que dependem de
 figura/imagem (o texto da figura se perde na conversão).
 
 ## Limitações
 
-- **Cobertura baixa e desbalanceada.** Só 13 das provas geraram questões; `redes` vem de **duas
-  provas**, ambas de 2024. Muitas provas foram descartadas porque o gabarito cobre vários cargos e o parser não
-  consegue escolher a tabela do cargo certo (Cebraspe, FCPC, Comperve etc.), ou porque o número da
-  questão não aparece no gabarito lido.
+- **Provas descartadas.** Muitas provas ainda não geram questões: gabarito de vários cargos sem como
+  identificar o cargo, gabarito que na verdade é outro caderno, formatos de alternativas não reconhecidos
+  e seções específicas não encontradas (motivos e contagens em `descartes.csv`).
 - **Subárea inferida do nome da prova**, com prioridade seguranca > redes > sistemas (a mesma das
   listagens do scraper). Provas de "infraestrutura e segurança" contam como `seguranca`. Provas de
-  Embrapa/ciências agrárias foram excluídas (sistemas de produção, não TI).
+  Embrapa/ciências agrárias foram excluídas (sistemas de produção, não TI). Concursos de TI mais amplos
+  podem trazer questões de outras áreas de TI dentro da mesma prova.
+- **Itens certo/errado** (Cebraspe) são afirmações soltas, mais curtas, e não têm alternativas reais. Os
+  enunciados de itens de um mesmo bloco podem perder o texto-base compartilhado.
 - **Ano** vem do nome da prova, não da data de aplicação.
-- **Gabarito**: usado o definitivo quando existe, senão o último disponível. Foram conferidas à mão
-  só algumas amostras; não há revisão completa.
-- Questões com tabelas ou código podem ter formatação degradada pelo `pdftotext`.
+- **Gabarito**: usado o definitivo quando existe, senão o último disponível. As verificações são
+  automáticas (cobertura e distribuição das letras) mais amostras conferidas à mão; não há revisão
+  completa.
+- Questões com tabelas ou código podem ter formatação degradada pelo `pdftotext`; questões que dependem
+  de figura foram descartadas.
 
 ## Uso e direitos
 

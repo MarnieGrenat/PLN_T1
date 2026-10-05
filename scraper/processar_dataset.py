@@ -32,6 +32,11 @@ RE_LIXO = re.compile(r"pcimark|pciconcursos|^\s*p[áa]gina\s+\d+(\s+de\s+\d+)?\s
 # cabeçalho corrido que pode dividir a linha com texto de outra coluna: apaga só o trecho
 RE_CABECALHO = re.compile(r"(?i:conhecimentos\s+espec[íi]ficos_.*?_(?:superior|m[ée]dio)\b)|"
                           r"[A-ZÀ-Ú][\wÀ-ú]+(?: [\wÀ-ú–-]+){0,8}_(?:Superior|M[ée]dio)\b")
+# conteúdo de orçamento público que vem junto com a parte específica de alguns concursos (ex.: MPO/Cebraspe)
+RE_FORA_DOMINIO = re.compile(r"\b(or[çc]ament[aáoí]\w*|lei de responsabilidade fiscal|\bLDO\b|\bLOA\b|\bLRF\b|"
+                             r"cr[ée]ditos? (adicional|suplementar|especial|extraordin[áa]rio)|receita p[úu]blica|"
+                             r"despesa p[úu]blica|dívida p[úu]blica|pol[íi]tica fiscal)", re.I)
+RE_JULGUE = re.compile(r"\bjulgue\b", re.I)
 RE_FIGURA = re.compile(r"\b(figura|imagem|gr[áa]fico|diagrama|ilustra[çc][ãa]o|print|captura de tela)\b", re.I)
 
 
@@ -138,14 +143,84 @@ def faixa_especificos(texto):
     return None
 
 
+RE_QUESTAO = re.compile(r"^[ \t]*quest[ãa]o\s*(?:n[º°o.]?\s*)?(\d{1,3})\b[ \t]*[.\-–—:)]?[ \t]*", re.I | re.M)
+
+
+def segmentar(texto, inicio=0, fim=None):
+    """Prefere marcadores explícitos ('QUESTÃO 26'); números soltos (páginas, itens) enganam a cadeia genérica."""
+    fim = len(texto) if fim is None else fim
+    cands = [(m.start(), int(m.group(1)), m.end()) for m in RE_QUESTAO.finditer(texto, inicio, fim)]
+    cadeia = sp.maior_sequencia(cands)
+    if len(cadeia) < 5:
+        return sp.segmentar_questoes(texto, inicio, fim)
+    questoes = []
+    for k, idx in enumerate(cadeia):
+        pos, num, fim_marca = cands[idx]
+        prox = cands[cadeia[k + 1]][0] if k + 1 < len(cadeia) else fim
+        corpo = texto[fim_marca:prox]
+        if k + 1 == len(cadeia):           # última questão: corta lixo após mudança de página
+            corpo = corpo[:4000]
+        questoes.append((num, corpo))
+    return questoes
+
+
 def segmentar_especificas(texto):
     faixa = faixa_especificos(texto)
     if faixa:
-        qs = [(n, c) for n, c in sp.segmentar_questoes(texto) if faixa[0] <= n <= faixa[1]]
+        qs = [(n, c) for n, c in segmentar(texto) if faixa[0] <= n <= faixa[1]]
         if len(qs) >= 5:
             return qs
     secao = sp.recortar_especificos(texto)
-    return sp.segmentar_questoes(texto, *secao) if secao else None
+    return segmentar(texto, *secao) if secao else None
+
+
+# ---------------------------------------------------------------- gabarito
+RE_NUM_CARGO = re.compile(r"cargo\s*(\d+)\s*[:\-–]", re.I)
+
+
+def gabarito_por_blocos(texto, titulo):
+    """Gabaritos com vários cargos: separa em blocos por cabeçalho e escolhe o do cargo da prova.
+
+    Diferente de sp.parse_gabarito: o cabeçalho de um bloco sem pares (ex.: 'CARGO 7: ...') é carregado
+    para o bloco seguinte (a tabela costuma vir sob outro título, como 'GABARITOS OFICIAIS'), e blocos do
+    mesmo cargo espalhados em várias páginas são unidos. Só aceita se houver um único melhor cargo.
+    """
+    alvo = sp.palavras_titulo(titulo)
+    blocos, cab, corpo, carga = [], [], [], []
+    for l in texto.splitlines():
+        tem_par = bool(sp.RE_PAR.search(l)) or len(re.findall(r"\b[A-E]\b", l)) >= 3
+        if not tem_par and len(re.findall(r"[A-Za-zÀ-ú]{3,}", l)) >= 2:
+            if corpo:
+                if sp.resolver_pares(sp.pares_gabarito("\n".join(corpo)))[2] >= 3:
+                    blocos.append((" ".join(carga + cab), "\n".join(corpo)))
+                    carga = []
+                else:                       # corpo sem tabela: o cabeçalho vale para o próximo bloco
+                    carga = carga + cab
+                cab, corpo = [], []
+            cab.append(l)
+        else:
+            corpo.append(l)
+    if corpo and sp.resolver_pares(sp.pares_gabarito("\n".join(corpo)))[2] >= 3:
+        blocos.append((" ".join(carga + cab), "\n".join(corpo)))
+
+    grupos = {}
+    for cabecalho, corpo_b in blocos:
+        m = RE_NUM_CARGO.search(cabecalho)
+        chave = m.group(1) if m else cabecalho
+        g = grupos.setdefault(chave, {"cab": "", "pares": []})
+        g["cab"] += " " + cabecalho
+        g["pares"] += sp.pares_gabarito(corpo_b)
+    pontuados = []
+    for chave, g in grupos.items():
+        resp, conflitos, total = sp.resolver_pares(g["pares"])
+        score = len(alvo & sp.palavras_titulo(g["cab"]))
+        if score >= 2 and len(resp) >= 10 and conflitos / max(total, 1) <= 0.15:
+            pontuados.append((score, resp))
+    if not pontuados:
+        return {}
+    topo = max(s for s, _ in pontuados)
+    melhores = [r for s, r in pontuados if s == topo]
+    return melhores[0] if len(melhores) == 1 else {}
 
 
 # ---------------------------------------------------------------- principal
@@ -180,7 +255,11 @@ def main():
             descartar(slug, "", "sem prova ou sem gabarito")
             continue
         titulo = slug.rsplit("-", 2)[0].replace("-", " ")
-        respostas, motivo = sp.parse_gabarito(arq_gab.read_text(encoding="utf-8", errors="replace"), titulo)
+        texto_gab = arq_gab.read_text(encoding="utf-8", errors="replace")
+        respostas, motivo = sp.parse_gabarito(texto_gab, titulo)
+        if motivo:   # vários cargos: tenta o separador por blocos
+            respostas = gabarito_por_blocos(texto_gab, titulo)
+            motivo = None if respostas else motivo
         if motivo:
             descartar(slug, "", motivo)
             continue
@@ -194,6 +273,16 @@ def main():
             continue
         if len(questoes) < 5:
             descartar(slug, "", "não foi possível separar as questões")
+            continue
+
+        # o gabarito precisa corresponder à prova: arquivo errado (ex.: outro caderno) rende "respostas"
+        # espúrias, que coincidem com alguns números de questão e produziriam gabaritos falsos
+        numeros = [n for n, _ in questoes]
+        cobertura = sum(n in respostas for n in numeros) / len(numeros)
+        validas = [respostas[n] for n in numeros if n in respostas and respostas[n] != "ANULADA"]
+        dominante = max(Counter(validas).values()) / len(validas) if validas else 1
+        if cobertura < 0.6 or (dominante > 0.7 and len(validas) >= 10):
+            descartar(slug, "", "gabarito não corresponde à prova (cobertura baixa ou letras implausíveis)")
             continue
 
         certo_errado = set(respostas.values()) <= {"C", "E", "ANULADA"}
@@ -212,6 +301,11 @@ def main():
                 continue
             if certo_errado:
                 enunciado, opcoes = sp.limpar(corpo), [("C", "Certo"), ("E", "Errado")]
+                # Cebraspe: o item pode vir seguido da introdução do próximo bloco ("Acerca de X, julgue ...")
+                m = RE_JULGUE.search(enunciado)
+                if m:
+                    ini = max(enunciado.rfind(". ", 0, m.start()), enunciado.rfind("? ", 0, m.start()))
+                    enunciado = enunciado[:ini + 1].strip() if ini >= 0 else ""
             else:
                 enunciado, opcoes = sp.separar_opcoes(corpo)
                 if len(opcoes) not in (4, 5):
@@ -225,6 +319,9 @@ def main():
                     continue
             if len(enunciado) < 20:
                 descartar(slug, num, "enunciado muito curto")
+                continue
+            if RE_FORA_DOMINIO.search(enunciado):
+                descartar(slug, num, "fora do domínio (orçamento público)")
                 continue
             if RE_FIGURA.search(enunciado):
                 descartar(slug, num, "depende de figura/imagem")

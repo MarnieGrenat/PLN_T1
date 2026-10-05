@@ -6,20 +6,20 @@ Gerado por `scraper/estatisticas_dataset.py` a partir de `dataset/questoes.jsonl
 
 | métrica | valor |
 |---|---|
-| questões | 274 |
-| provas de origem | 13 |
-| tokens (enunciado + alternativas) | 26345 |
-| vocabulário (tipos distintos) | 4598 |
-| palavras que aparecem 1 vez | 2232 |
+| questões | 1987 |
+| provas de origem | 78 |
+| tokens (enunciado + alternativas) | 168387 |
+| vocabulário (tipos distintos) | 12407 |
+| palavras que aparecem 1 vez | 5163 |
 
 ## Questões por subárea e ano
 
-| subárea | 2023 | 2024 | 2025 | 2026 | total | provas |
-|---|---|---|---|---|---|---|
-| redes | – | 69 | – | – | 69 | 2 |
-| seguranca | 25 | 75 | 7 | 28 | 135 | 8 |
-| sistemas | 28 | 17 | – | 25 | 70 | 3 |
-| **total** | 53 | 161 | 7 | 53 | 274 | 13 |
+| subárea | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | total | provas |
+|---|---|---|---|---|---|---|---|---|---|
+| redes | – | – | – | – | 424 | 90 | 155 | 669 | 24 |
+| seguranca | 57 | 23 | 51 | 151 | 275 | 169 | 28 | 754 | 29 |
+| sistemas | – | – | – | 28 | 42 | 301 | 193 | 564 | 25 |
+| **total** | 57 | 23 | 51 | 179 | 741 | 560 | 376 | 1987 | 78 |
 
 ## Tamanho dos textos (em tokens)
 
@@ -27,36 +27,36 @@ Células: média / mediana / mín / máx.
 
 | subárea | enunciado | alternativa (cada) | questão inteira |
 |---|---|---|---|
-| redes | 42.4 / 38 / 20 / 85 | 10.7 / 7 / 1 / 45 | 85.1 / 81 / 30 / 197 |
-| seguranca | 54.2 / 39 / 9 / 244 | 8.3 / 4 / 0 / 140 | 92.7 / 81 / 17 / 270 |
-| sistemas | 74.6 / 59 / 14 / 437 | 8.2 / 4 / 1 / 111 | 113.8 / 95 / 28 / 564 |
-| todas | 56.5 / 44 / 9 / 437 | 8.8 / 4 / 0 / 140 | 96.1 / 86 / 17 / 564 |
+| redes | 51.2 / 33 / 9 / 365 | 9.4 / 4 / 1 / 103 | 88.4 / 69 / 13 / 547 |
+| seguranca | 50.9 / 39 / 3 / 244 | 6.5 / 3 / 1 / 140 | 75.4 / 57 / 12 / 380 |
+| sistemas | 57.5 / 46 / 7 / 437 | 7.7 / 4 / 0 / 111 | 93.0 / 88 / 13 / 564 |
+| todas | 52.9 / 39 / 3 / 437 | 7.8 / 4 / 0 / 140 | 84.7 / 71 / 12 / 564 |
 
 ## Alternativas e gabarito
 
-Número de alternativas: 4 → 134, 5 → 140
+Número de alternativas: 2 → 485, 4 → 392, 5 → 1110
 
 Distribuição da letra correta:
 
 | subárea | A | B | C | D | E |
 |---|---|---|---|---|---|
-| redes | 17 (25%) | 20 (29%) | 16 (23%) | 16 (23%) | 0 (0%) |
-| seguranca | 33 (24%) | 30 (22%) | 34 (25%) | 24 (18%) | 14 (10%) |
-| sistemas | 15 (21%) | 15 (21%) | 14 (20%) | 18 (26%) | 8 (11%) |
-| todas | 65 (24%) | 65 (24%) | 64 (23%) | 58 (21%) | 22 (8%) |
+| redes | 98 (15%) | 116 (17%) | 211 (32%) | 104 (16%) | 140 (21%) |
+| seguranca | 89 (12%) | 109 (14%) | 244 (32%) | 104 (14%) | 208 (28%) |
+| sistemas | 105 (19%) | 119 (21%) | 140 (25%) | 107 (19%) | 93 (16%) |
+| todas | 292 (15%) | 344 (17%) | 595 (30%) | 315 (16%) | 441 (22%) |
 
 ## Palavras mais frequentes por subárea
 
 Sem stopwords; acentos preservados na exibição. Top 15.
 
-- **redes**: rede (76), dados (40), segurança (34), redes (33), sistema (30), recursos (26), acesso (26), dispositivos (20), sistemas (19), virtuais (19), máquina (18), cabeamento (18), protocolo (17), servidores (16), enquanto (16)
-- **seguranca**: dados (69), segurança (67), rede (59), informação (48), tipo (42), acesso (40), sistema (39), iii (34), uso (31), protocolo (30), serviços (29), aplicação (26), redes (25), autenticação (25), servidor (24)
-- **sistemas**: dados (63), sistema (38), código (31), div (28), tipo (28), iii (26), página (20), forma (19), uso (19), execução (17), software (17), html (16), http (16), desenvolvimento (15), padrão (15)
+- **redes**: rede (456), dados (288), sistema (223), iii (213), certo (181), errado (181), acesso (175), servidor (170), redes (151), segurança (148), protocolo (146), camada (136), sistemas (126), cada (125), servidores (108)
+- **seguranca**: segurança (375), dados (335), certo (265), errado (264), rede (246), informação (214), sistema (185), acesso (158), tipo (127), riscos (118), servidor (117), sistemas (115), iii (112), criptografia (107), gestão (105)
+- **sistemas**: dados (450), iii (215), sistema (210), software (135), sistemas (130), desenvolvimento (114), forma (107), código (99), valor (99), banco (97), execução (89), segurança (87), analise (87), modelo (86), cada (84)
 
 ## Palavras características de cada subárea
 
 Maior razão entre a frequência relativa na subárea e no resto do corpus (mínimo de 5 ocorrências na subárea).
 
-- **redes**: cabeamento (18), fibra (11), samba (10), máquina (18), associação (7), máscara (13), vmware (6), cobre (6), distâncias (5), óptica (5), cabos (5), vsphere (5)
-- **seguranca**: ataque (18), risco (15), diferencial (12), incremental (12), pessoais (11), lgpd (11), raid (10), ipv6 (18), técnico (9), request (8), controles (8), público (8)
-- **sistemas**: class (13), pessoa (11), trecho (9), body (9), anotação (9), pedidos (9), select (9), html (16), spring (8), apis (8), resultado (7), from (7)
+- **redes**: docente (41), formação (22), aprendizagem (21), samba (14), curricular (14), graduação (12), pedagógico (12), ensino (45), baterias (11), pedagógica (11), cursos (11), estudantes (22)
+- **seguranca**: crime (13), intrusion (11), cibernética (11), consequências (10), challenge (9), tjrj (9), contratou (8), consultoria (8), íris (8), etir (8), risco (64), sede (7)
+- **sistemas**: java (38), cref2 (18), class (17), coesão (14), subárea (14), escreva (14), scrum (51), spring (12), body (11), subclasse (11), polimorfismo (10), id_cliente (10)
