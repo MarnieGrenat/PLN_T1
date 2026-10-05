@@ -19,7 +19,8 @@ Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + al
 | `avaliar_modelos.py` | testa spaCy, BERT e um LLM contra a nota humana (Spearman, IC por bootstrap) |
 | `colab_modelos.ipynb` | roda BERT e LLM aberto no Google Colab (sem GPU local) |
 | `resultados/` | previsões de cada modelo (`pred_*.csv`) e contextos do corpus (`contextos.json`) |
-| `ANALISE_MODELOS.md` | tabela de correlações dos modelos com os humanos |
+| `ANALISE_MODELOS.md` | tabela de correlações dos modelos com os humanos (gerada) |
+| `COMPARACAO.md` | análise e comparação dos resultados (item b) |
 | `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
 | `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
 
@@ -55,7 +56,7 @@ Cada anotador deve preencher o seu arquivo **sem ver as respostas do outro**.
 |---|---|
 | estático: spaCy `pt_core_news_lg` | cosseno entre os vetores das duas palavras |
 | transformer: BERTimbau e `bert-base-uncased` | cosseno entre vetores (média das 4 últimas camadas) da palavra isolada e da palavra em até 20 contextos reais do corpus de questões |
-| LLM | recebe o par e a mesma escala Likert e devolve a nota (API da Anthropic, ou LLM aberto via Hugging Face usando a nota esperada pelas probabilidades dos dígitos 1–5) |
+| LLM: Claude Sonnet 5.5 | recebe só o par e a mesma escala Likert e dá a nota (feita em conversa, às cegas em relação às notas humanas; ver `resultados/LLM_CLAUDE.md`). `avaliar_modelos.py` também sabe chamar a API da Anthropic ou um LLM aberto via Hugging Face (nota esperada pelas probabilidades dos dígitos 1–5) |
 
 A métrica é a correlação de Spearman com a nota humana (com IC 95% por bootstrap), comparada com o Spearman entre os
 dois anotadores como referência. Se tiver o dataset de palavras feito em aula, passe `--dataset-aula arquivo.csv`

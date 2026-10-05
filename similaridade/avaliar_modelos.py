@@ -305,10 +305,14 @@ def analisar(pares):
             linhas.append(linha)
         if fonte == "nossa":
             h = correlacoes([p["a1"] for p in ps], [p["a2"] for p in ps])
-            linhas += ["", f"Referência humana: Spearman entre os dois anotadores = **{f(h['spearman'])}** "
-                           f"(IC 95% [{f(h['ic'][0], 2)}, {f(h['ic'][1], 2)}]). Nenhum modelo pode ser avaliado "
-                           "como melhor que esse teto de forma confiável: se os anotadores discordam, "
-                           "a \"resposta certa\" é ruidosa."]
+            rho = h["spearman"]
+            conf = 2 * rho / (1 + rho)                     # Spearman-Brown: confiabilidade da média dos 2 anotadores
+            teto = math.sqrt(conf) if conf == conf and conf > 0 else float("nan")
+            linhas += ["", f"Referência humana: Spearman entre os dois anotadores = **{f(rho)}** "
+                           f"(IC 95% [{f(h['ic'][0], 2)}, {f(h['ic'][1], 2)}]). A nota de comparação é a **média** dos "
+                           f"dois, que é menos ruidosa que um anotador sozinho: pela fórmula de Spearman-Brown a "
+                           f"confiabilidade da média é {f(conf, 2)}, então mesmo um modelo perfeito teria correlação de "
+                           f"cerca de **{f(teto, 2)}** com ela (teto realista). Compare os modelos com esse valor, não com 1."]
         linhas.append("")
 
     # correlação entre os modelos (os modelos concordam entre si?)
@@ -367,7 +371,7 @@ def main():
             for nome in args.bert_modelos:
                 print(f"BERT {nome}:")
                 for variante, scores in prever_bert(pares, nome).items():
-                    salvar_previsoes(f"bert-{slug(nome)}-{variante}", pares, scores)
+                    salvar_previsoes(f"{slug(nome)}-{variante}", pares, scores)
         if "llm" in args.modelos:
             modelo = args.llm_modelo or ("claude-haiku-4-5-20251001" if args.llm_backend == "anthropic" else "Qwen/Qwen2.5-3B-Instruct")
             print(f"LLM {modelo} ({args.llm_backend}):")
