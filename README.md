@@ -52,13 +52,14 @@ lemas mais frequentes (substantivos, verbos e adjetivos), sorteia 100 pares disj
 grava um arquivo de anotação por anotador. A escala Likert (1 a 5) e as instruções estão em
 [`similaridade/README.md`](similaridade/README.md).
 
-As palavras e os pares foram gerados a partir da **primeira versão do corpus de questões (274
-questões)**, antes da coleta ampliada. Para não invalidar as anotações, eles não foram regerados.
-Os dois alunos anotaram os 100 pares (`pares_anotador1.csv` e `pares_anotador2.csv`).
-`similaridade/avaliar_concordancia.py` une as duas anotações, mede a concordância
-([`CONCORDANCIA.md`](similaridade/CONCORDANCIA.md)) e gera o CSV final `similaridade_final.csv`, com a
-nota de cada anotador e a média das duas. Esquema, estatísticas e limitações do CSV:
-[`similaridade/DATASET_CARD.md`](similaridade/DATASET_CARD.md).
+Os pares foram refeitos sobre o corpus ampliado (versão 2) e **aguardam anotação**
+(`pares_anotador1.csv` e `pares_anotador2.csv`, com a coluna `similaridade` vazia). A versão 1, feita
+sobre as 274 primeiras questões e já anotada pelos dois alunos, está arquivada em `similaridade/v1/`.
+
+Depois da anotação, `similaridade/avaliar_concordancia.py` une as duas anotações, mede a concordância
+(`similaridade/CONCORDANCIA.md`) e gera o CSV final `similaridade_final.csv`, com a
+nota de cada anotador e a média das duas. O *dataset card* da v1 (esquema, estatísticas e limitações):
+[`similaridade/v1/DATASET_CARD.md`](similaridade/v1/DATASET_CARD.md); o da v2 será escrito com os resultados.
 
 ## Como executar
 

@@ -34,7 +34,10 @@ BOILERPLATE = {"assinalar", "afirmativa", "afirmação", "alternativa", "correto
                "apenas", "referir", "relação", "texto", "trecho", "ser", "ter", "haver", "estar", "fazer",
                "poder", "dever", "utilizar", "usar", "chamar", "denominar", "ocorrer", "possuir",
                # lemas errados do spaCy para formas verbais do enunciado ("assinale", "considere", ...)
-               "assinaler", "considere", "analise", "afirmativo", "afirmar", "indicar", "seguir"}
+               "assinaler", "considere", "analise", "afirmativo", "afirmar", "indicar", "seguir",
+               # vocabulário dos itens certo/errado (Cebraspe) e de enunciados em geral
+               "julgue", "julgar", "acerca", "seguinte", "correto", "errado", "certo", "tal", "caso",
+               "verdadeiro", "falso", "proposição", "asserção", "assertiva", "analista", "órgão"}
 ROMANO = re.compile(r"^[ivxlcdm]+$")
 
 ESCALA = {
@@ -51,7 +54,8 @@ def textos():
         for linha in f:
             q = json.loads(linha)
             yield q["enunciado"]
-            yield from q["alternativas"].values()
+            if q["tipo"] == "multipla_escolha":   # em certo/errado as "alternativas" são só Certo/Errado
+                yield from q["alternativas"].values()
 
 
 def main():

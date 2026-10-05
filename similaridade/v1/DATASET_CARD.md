@@ -3,7 +3,7 @@
 100 pares de palavras do vocabulário de TI em português, cada um com nota de similaridade em escala
 Likert de 1 a 5, dada de forma independente por dois anotadores. Arquivo principal:
 [`similaridade_final.csv`](similaridade_final.csv). Construído para o Trabalho 1 de PLN (PUCRS), a partir
-do [corpus de questões de concursos](../dataset/README.md).
+do [corpus de questões de concursos](../../dataset/README.md).
 
 ## Conteúdo
 

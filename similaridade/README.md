@@ -2,6 +2,10 @@
 
 Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + alternativas).
 
+> **Versão 2.** Refeito sobre o corpus ampliado (1500 questões). Os arquivos de anotação abaixo estão
+> **vazios**, aguardando a nova anotação. A versão anterior (274 questões, já anotada e com concordância
+> calculada) está em [`v1/`](v1/).
+
 ## Arquivos
 
 | arquivo | conteúdo |
@@ -11,15 +15,15 @@ Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + al
 | `pares_anotador2.csv` | os mesmos 100 pares, mesma ordem, para o anotador 2 |
 | `construir_pares.py` | gera as palavras e os pares (semente fixa, resultado reprodutível) |
 | `avaliar_concordancia.py` | une as anotações, calcula a concordância e gera o CSV final |
-| `similaridade_final.csv` | **resultado**: `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
-| `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
-| `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
+| `similaridade_final.csv` | **resultado** (gerado depois da anotação): `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
+| `CONCORDANCIA.md` | métricas de concordância entre os anotadores (gerado depois da anotação) |
 
 ## Como foi gerado
 
 1. spaCy `pt_core_news_lg`: tokenização, lematização e remoção de stopwords.
 2. Ficam só substantivos, verbos e adjetivos (sem nomes próprios/siglas), com lema alfabético de ≥ 3
-   letras, sem numerais romanos e sem vocabulário de enunciado ("assinalar", "alternativa", ...).
+   letras, sem numerais romanos e sem vocabulário de enunciado ("assinalar", "alternativa", "julgue",
+   "asserção", ...). Nos itens certo/errado só o enunciado entra (as "alternativas" são só Certo/Errado).
 3. Representatividade = frequência do lema no corpus (desempate: nº de questões em que aparece).
 4. As 200 lemas são embaralhadas (semente 42) e emparelhadas em sequência: 100 pares disjuntos,
    cada palavra aparece em exatamente um par.
