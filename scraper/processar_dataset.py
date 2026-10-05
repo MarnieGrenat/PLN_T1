@@ -15,6 +15,7 @@ Uso (a partir da raiz do repositório):
 """
 import csv
 import json
+import random
 import re
 import sys
 import zipfile
@@ -27,6 +28,8 @@ import scraper_pci as sp  # reaproveita segmentação de questões, alternativas
 RAIZ = Path(__file__).resolve().parent.parent
 ZIP_RAW = RAIZ / "dataset" / "raw.zip"
 DIR_SAIDA = RAIZ / "dataset"
+
+LIMITE_POR_SUBAREA, SEMENTE = 500, 42   # o trabalho pede 500 questões por subárea; o excedente é ignorado
 
 RE_LIXO = re.compile(r"pcimark|pciconcursos|^\s*p[áa]gina\s+\d+(\s+de\s+\d+)?\s*$", re.I)
 # cabeçalho corrido que pode dividir a linha com texto de outra coluna: apaga só o trecho
@@ -341,6 +344,18 @@ def main():
             n_ok += 1
         provas_usadas[slug] = (sub, ano, n_ok)
         print(f"{slug[:90]:90s} {sub:9s} {ano} {n_ok:3d}")
+
+    # ---- limita a LIMITE_POR_SUBAREA por subárea: amostra aleatória com semente fixa (reprodutível),
+    # mantendo a ordem original; o excedente fica registrado em descartes.csv
+    rng = random.Random(SEMENTE)
+    escolhidos = set()
+    for sub in sorted({q["subarea"] for q in saida}):
+        ids = [q["id"] for q in saida if q["subarea"] == sub]
+        escolhidos |= set(rng.sample(ids, min(LIMITE_POR_SUBAREA, len(ids))))
+    for q in saida:
+        if q["id"] not in escolhidos:
+            descartar(q["prova"], q["numero"], f"excedente (limite de {LIMITE_POR_SUBAREA} por subárea)")
+    saida = [q for q in saida if q["id"] in escolhidos]
 
     # ---- gravação: um arquivo geral + um por subárea/ano
     DIR_SAIDA.mkdir(exist_ok=True)

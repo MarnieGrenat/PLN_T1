@@ -35,27 +35,31 @@ arquivos homônimos (`gabarito.txt`) de provas diferentes.
 
 ## Estatísticas
 
-1987 questões, vindas de 78 provas. Estatísticas completas do corpus (tokens, vocabulário, tamanho
-dos textos, distribuição do gabarito, palavras mais frequentes e características por subárea) em
-[`ESTATISTICAS.md`](ESTATISTICAS.md), geradas por `scraper/estatisticas_dataset.py`.
+1500 questões (**500 por subárea**), vindas de 77 provas. Estatísticas completas do corpus (tokens,
+vocabulário, tamanho dos textos, distribuição do gabarito, palavras mais frequentes e características por
+subárea) em [`ESTATISTICAS.md`](ESTATISTICAS.md), geradas por `scraper/estatisticas_dataset.py`.
 
 | subárea   | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | total | provas |
 |-----------|--:|--:|--:|--:|--:|--:|--:|------:|-------:|
-| redes     | – | – | – | – | 424 | 90 | 155 | 669 | 24 |
-| seguranca | 57 | 23 | 51 | 151 | 275 | 169 | 28 | 754 | 29 |
-| sistemas  | – | – | – | 28 | 42 | 301 | 193 | 564 | 25 |
+| redes     | – | – | – | – | 312 | 70 | 118 | 500 | 23 |
+| seguranca | 34 | 14 | 36 | 104 | 191 | 105 | 16 | 500 | 29 |
+| sistemas  | – | – | – | 21 | 39 | 274 | 166 | 500 | 25 |
 
 Por tipo de questão:
 
 | subárea   | múltipla escolha | certo/errado | total |
 |-----------|--:|--:|--:|
-| redes     | 488 | 181 | 669 |
-| seguranca | 490 | 264 | 754 |
-| sistemas  | 524 | 40 | 564 |
+| redes     | 372 | 128 | 500 |
+| seguranca | 321 | 179 | 500 |
+| sistemas  | 460 | 40 | 500 |
 
-1110 questões têm 5 alternativas, 392 têm 4 e 485 são de certo/errado (Cebraspe; as "alternativas" são
-`C` = Certo e `E` = Errado). Só com múltipla escolha, redes e seguranca ficam um pouco abaixo de 500; com
-certo/errado, as três subáreas passam de 500.
+846 questões têm 5 alternativas, 307 têm 4 e 347 são de certo/errado (Cebraspe; as "alternativas" são
+`C` = Certo e `E` = Errado).
+
+**Limite de 500 por subárea.** O processamento encontrou mais questões válidas (754 em seguranca, 564 em
+sistemas, 669 em redes), mas o trabalho pede 500 por subárea. Foi sorteada uma amostra de 500 por subárea
+(semente 42, reprodutível; ver `LIMITE_POR_SUBAREA` em `scraper/processar_dataset.py`). O excedente fica
+registrado em `descartes.csv` com o motivo "excedente".
 
 ## Como foi construído
 
