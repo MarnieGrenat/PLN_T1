@@ -2,9 +2,9 @@
 
 Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + alternativas).
 
-> **Versão 2.** Refeito sobre o corpus ampliado (1500 questões). Os arquivos de anotação abaixo estão
-> **vazios**, aguardando a nova anotação. A versão anterior (274 questões, já anotada e com concordância
-> calculada) está em [`v1/`](v1/).
+> **Versão 2.** Refeito sobre o corpus ampliado (1500 questões), anotado pelos dois alunos. Resultado em
+> `similaridade_final.csv`, concordância em [`CONCORDANCIA.md`](CONCORDANCIA.md) e *dataset card* em
+> [`DATASET_CARD.md`](DATASET_CARD.md). A versão anterior (274 questões) está em [`v1/`](v1/).
 
 ## Arquivos
 
@@ -15,8 +15,9 @@ Item 2 do Trabalho 1. Palavras vêm de `dataset/questoes.jsonl` (enunciados + al
 | `pares_renato.csv` | os mesmos 100 pares, mesma ordem, para o anotador 2 (Renato) |
 | `construir_pares.py` | gera as palavras e os pares (semente fixa, resultado reprodutível) |
 | `avaliar_concordancia.py` | une as anotações, calcula a concordância e gera o CSV final |
-| `similaridade_final.csv` | **resultado** (gerado depois da anotação): `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
-| `CONCORDANCIA.md` | métricas de concordância entre os anotadores (gerado depois da anotação) |
+| `similaridade_final.csv` | **resultado**: `palavra_1, palavra_2, similaridade_a1, similaridade_a2, similaridade_media` |
+| `DATASET_CARD.md` | *dataset card* do CSV final (esquema, construção, estatísticas, limitações) |
+| `CONCORDANCIA.md` | métricas de concordância entre os anotadores |
 
 ## Como foi gerado
 
